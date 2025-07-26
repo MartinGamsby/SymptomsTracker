@@ -4,23 +4,190 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rapport Médical - {{ patient_name }}</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        /* --- Styles Généraux et Variables --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            /*background-color: #f9fafb;*/
+            color: #111827;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 20px auto;
+            /*padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;*/
+        }
+
+        /* --- Typographie --- */
+        h1, h2, h3 {
+            font-weight: 700;
+            color: #111827;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 24px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #374151;
+            margin-top: 30px;
+            border-bottom: 1px solid #f3f4f6;
+            padding-bottom: 8px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* --- En-tête --- */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            color: #6b7280;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+
+        .patient-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #4b5563;
+            background-color: #f9fafb;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* --- Chronologie des événements --- */
+        .timeline ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .timeline li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .timeline li:last-child {
+            border-bottom: none;
+        }
+
+        /* --- Tableau des Symptômes --- */
+        .symptoms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .symptoms-table th, .symptoms-table td {
+            border: 1px solid #e5e7eb;
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .symptoms-table thead {
+            background-color: #f9fafb;
+        }
+
+        .symptoms-table th {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .symptoms-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        /* --- Graphique --- */
+        .chart-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+        }
+
+        /* --- Styles pour l'impression --- */
+        @media print {
+            @page {
+                size: landscape;
+                margin: 1.5cm; /* Marges d'impression standard */
+            }
+
+            body {
+                background-color: #ffffff;
+                font-size: 11pt;
+            }
+
+            .container {
+                box-shadow: none;
+                border: none;
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            h1, h2 {
+                page-break-after: avoid;
+            }
+            
+            .symptoms-table, .timeline {
+                page-break-inside: avoid;
+            }
+            
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <div class="container">
         <header class="header">
-            <h1>Rapport Médical et Chronologie des Symptômes</h1>
-            <p class="subtitle">Préparé pour consultation</p>
+            <h1>Rapport Médical et Chronologie des Symptômes - {{ patient_name }}</h1>
+            <!--<p class="subtitle">Préparé pour consultation</p>-->
             <div class="patient-info">
-                <span><strong>Patient :</strong> {{ patient_name }}</span>
-                <span><strong>Date du rapport :</strong> {{ report_date }}</span>
+                <span><strong>Date de création du rapport :</strong> {{ report_date.fr }}</span>
             </div>
         </header>
 
         <section>
             <h2>Résumé de la Situation</h2>
             <p>
-                {{ summary_text }}
+                {{ summary_text.fr }}
             </p>
         </section>
 
@@ -28,7 +195,7 @@
             <h2>Chronologie des Événements Clés</h2>
             <ul>
                 {% for event in key_events %}
-                <li><strong>{{ event.date }}:</strong> {{ event.description }}</li>
+                <li><strong>{{ event.date.fr }}:</strong> {{ event.description.fr }}</li>
                 {% endfor %}
             </ul>
         </section>
@@ -49,12 +216,12 @@
                 <tbody>
                     {% for symptom in symptoms %}
                     <tr>
-                        <td>{{ symptom.name }}</td>
-                        <td>{{ symptom.category }}</td>
-                        <td>{{ symptom.start_date }}</td>
-                        <td>{{ symptom.triggers }}</td>
-                        <td>{{ symptom.current_status }}</td>
-                        <td>{{ symptom.notes }}</td>
+                        <td>{{ symptom.name.fr }}</td>
+                        <td>{{ symptom.category.fr }}</td>
+                        <td>{{ symptom.start_date.fr }}</td>
+                        <td>{{ symptom.triggers.fr }}</td>
+                        <td>{{ symptom.current_status.fr }}</td>
+                        <td>{{ symptom.notes.fr }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

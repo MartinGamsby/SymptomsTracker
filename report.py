@@ -1,23 +1,61 @@
 import jinja2
 import pdfkit
+import locale
 from datetime import datetime
 from dataclasses import dataclass
 
+@dataclass
+class String:
+    fr: str
+    en: str
+    
+@dataclass
+class CompleteDate:
+    date: datetime
+    
+    @property
+    def fr(self):
+        return self.date.strftime("%d %B %Y")
+    @property
+    def en(self):
+        return self.date.strftime("%B %d %Y")
+        
+@dataclass
+class Date:
+    date: datetime
+    
+    @property
+    def fr(self):
+        return self.date.strftime("%d %b %Y")
+    @property
+    def en(self):
+        return self.date.strftime("%b %d %Y")
+
+@dataclass
+class MonthDate:
+    date: datetime
+    
+    @property
+    def fr(self):
+        return self.date.strftime("%Y-%m")
+    @property
+    def en(self):
+        return self.date.strftime("%Y-%m")
 
 @dataclass
 class Event:
-    date: str
-    description: str
+    date: Date
+    description: String
 
 
 @dataclass
 class Symptom:
-    name: str
-    category: str
-    start_date: str
-    triggers: str
-    current_status: str
-    notes: str
+    name: String
+    category: Date
+    start_date: String
+    triggers: String
+    current_status: String
+    notes: String
     
     @property
     def subtotal_dollar(self):
@@ -30,30 +68,12 @@ def run_cmd(self, arg):
     subprocess.run(args)
 
 
-def generate_pdf(patient_name, summary_text):
-    item1 = "Item 1"
-    item2 = "Item 2"
-    item3 = "Item 3"
+def generate_pdf(patient_name, summary_text, symptoms, key_events, output_pdf, language="fr"):
 
-    subtotal1 = 123
-    subtotal2 = 456
-    subtotal3 = 789
-    total = subtotal1 + subtotal2 + subtotal3
+    if language == "fr":        
+        locale.setlocale(locale.LC_ALL, 'fr_CA.UTF-8')
+    report_date = CompleteDate(datetime.today())
 
-    report_date = datetime.today().strftime("%d %b, %Y")
-    month = datetime.today().strftime("%B")
-
-    name: str
-    category: str
-    subtotal: float
-    start_date: str
-    triggers: str
-    current_status: str
-    notes: str
-    
-    symptoms = [Symptom("Fatigue", "Catégorie", "Start date", "Triggers", "Current Status", "Notes"),
-               ]
-    key_events = [Event("December 2022", "Broke my toe")]
     context = { 'patient_name': patient_name,
                 'report_date': report_date,
                 'summary_text': summary_text,
@@ -67,8 +87,17 @@ def generate_pdf(patient_name, summary_text):
     html_template = 'templates/report.html'
     template = template_env.get_template(html_template)
     output_text = template.render(context)
+    
+    with open(output_pdf.replace(".pdf",".html"), "w", encoding="utf-8") as f:
+        f.write(output_text)    
+    
+    
+    options = {
+          'encoding': 'UTF-8',
+          'page-size': 'A4',
+          'orientation': 'Landscape'
+      }
 
     config = pdfkit.configuration(wkhtmltopdf='C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
-    output_pdf = 'output/report.pdf'
-    pdfkit.from_string(output_text, output_pdf, configuration=config, css='templates/report.css')
+    pdfkit.from_string(output_text, output_pdf, configuration=config, options=options)
 
