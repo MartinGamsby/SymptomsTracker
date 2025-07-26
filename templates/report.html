@@ -1,0 +1,53 @@
+<table class="invoice-info-container">
+<tbody>
+<tr>
+<td>Invoice Date: <strong>{{today_date}}</strong></td>
+</tr>
+<tr>
+<td>Invoice No: <strong>12345</strong></td>
+</tr>
+</tbody>
+</table>
+<table class="line-items-container">
+<thead>
+<tr>
+<th class="heading-quantity">&nbsp;</th>
+<th class="heading-description">Description</th>
+<th class="heading-price">&nbsp;</th>
+<th class="heading-subtotal">Subtotal</th>
+</tr>
+</thead>
+<tbody>
+{% for symptom in symptoms %}
+<tr>
+<td>&nbsp;</td>
+<td>{{symptom.name}}</td>
+<td class="right">&nbsp;</td>
+<td class="bold">{{symptom.subtotal_dollar}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<table class="line-items-container has-bottom-border">
+<thead>
+<tr>
+<th>Payment Info</th>
+<th>Due By</th>
+<th>Total Due</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="payment-info">
+<div>Account No: <strong>456</strong></div>
+<div>Routing No: <strong>789</strong></div>
+</td>
+<td class="large">{{month}}</td>
+<td class="large total">{{total}}</td>
+</tr>
+</tbody>
+</table>
+<div class="footer">
+<div class="footer-info">{{ name }}</div>
+<div class="footer-thanks">Thank you!</div>
+</div>
