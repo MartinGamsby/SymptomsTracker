@@ -12,7 +12,8 @@ def run_cmd(arg):
     
 def main():
     print("pdf start")
-    report.generate_pdf()
+    report.generate_pdf(patient_name="Martin Gamsby",
+        summary_text="test")
     print("pdf end")
     run_cmd("cmd.exe /c start output\\report.pdf")
     #run_cmd("explorer.exe output")

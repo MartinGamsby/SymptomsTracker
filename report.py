@@ -5,9 +5,19 @@ from dataclasses import dataclass
 
 
 @dataclass
+class Event:
+    date: str
+    description: str
+
+
+@dataclass
 class Symptom:
     name: str
-    subtotal: float
+    category: str
+    start_date: str
+    triggers: str
+    current_status: str
+    notes: str
     
     @property
     def subtotal_dollar(self):
@@ -20,8 +30,7 @@ def run_cmd(self, arg):
     subprocess.run(args)
 
 
-def generate_pdf():
-    name = "The Name"
+def generate_pdf(patient_name, summary_text):
     item1 = "Item 1"
     item2 = "Item 2"
     item3 = "Item 3"
@@ -31,17 +40,24 @@ def generate_pdf():
     subtotal3 = 789
     total = subtotal1 + subtotal2 + subtotal3
 
-    today_date = datetime.today().strftime("%d %b, %Y")
+    report_date = datetime.today().strftime("%d %b, %Y")
     month = datetime.today().strftime("%B")
 
-    symptoms = [Symptom(item1, subtotal1),
-                Symptom(item2, subtotal2),
-                Symptom(item3, subtotal3),
+    name: str
+    category: str
+    subtotal: float
+    start_date: str
+    triggers: str
+    current_status: str
+    notes: str
+    
+    symptoms = [Symptom("Fatigue", "Catégorie", "Start date", "Triggers", "Current Status", "Notes"),
                ]
-    context = { 'name': name, 
-                'today_date': today_date, 
-                'total': f'${total:.2f}', 
-                'month': month,
+    key_events = [Event("December 2022", "Broke my toe")]
+    context = { 'patient_name': patient_name,
+                'report_date': report_date,
+                'summary_text': summary_text,
+                'key_events': key_events,
                 'symptoms': symptoms
               }
 

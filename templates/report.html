@@ -1,53 +1,73 @@
-<table class="invoice-info-container">
-<tbody>
-<tr>
-<td>Invoice Date: <strong>{{today_date}}</strong></td>
-</tr>
-<tr>
-<td>Invoice No: <strong>12345</strong></td>
-</tr>
-</tbody>
-</table>
-<table class="line-items-container">
-<thead>
-<tr>
-<th class="heading-quantity">&nbsp;</th>
-<th class="heading-description">Description</th>
-<th class="heading-price">&nbsp;</th>
-<th class="heading-subtotal">Subtotal</th>
-</tr>
-</thead>
-<tbody>
-{% for symptom in symptoms %}
-<tr>
-<td>&nbsp;</td>
-<td>{{symptom.name}}</td>
-<td class="right">&nbsp;</td>
-<td class="bold">{{symptom.subtotal_dollar}}</td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
-<table class="line-items-container has-bottom-border">
-<thead>
-<tr>
-<th>Payment Info</th>
-<th>Due By</th>
-<th>Total Due</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="payment-info">
-<div>Account No: <strong>456</strong></div>
-<div>Routing No: <strong>789</strong></div>
-</td>
-<td class="large">{{month}}</td>
-<td class="large total">{{total}}</td>
-</tr>
-</tbody>
-</table>
-<div class="footer">
-<div class="footer-info">{{ name }}</div>
-<div class="footer-thanks">Thank you!</div>
-</div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport Médical - {{ patient_name }}</title>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Rapport Médical et Chronologie des Symptômes</h1>
+            <p class="subtitle">Préparé pour consultation</p>
+            <div class="patient-info">
+                <span><strong>Patient :</strong> {{ patient_name }}</span>
+                <span><strong>Date du rapport :</strong> {{ report_date }}</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Résumé de la Situation</h2>
+            <p>
+                {{ summary_text }}
+            </p>
+        </section>
+
+        <section class="timeline">
+            <h2>Chronologie des Événements Clés</h2>
+            <ul>
+                {% for event in key_events %}
+                <li><strong>{{ event.date }}:</strong> {{ event.description }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tableau Détaillé des Symptômes</h2>
+            <table class="symptoms-table">
+                <thead>
+                    <tr>
+                        <th>Symptôme</th>
+                        <th>Catégorie</th>
+                        <th>Début Approx.</th>
+                        <th>Déclencheur(s)</th>
+                        <th>Statut Actuel</th>
+                        <th>Remarques</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for symptom in symptoms %}
+                    <tr>
+                        <td>{{ symptom.name }}</td>
+                        <td>{{ symptom.category }}</td>
+                        <td>{{ symptom.start_date }}</td>
+                        <td>{{ symptom.triggers }}</td>
+                        <td>{{ symptom.current_status }}</td>
+                        <td>{{ symptom.notes }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section class="chart-container">
+            <h2>Graphique Chronologique de l'Intensité des Symptômes</h2>
+            <p style="font-size:14px; color:#6b7280;">Ce graphique illustre l'évolution de l'intensité des principaux symptômes au fil du temps.</p>
+            <img src="https://github.com/MartinGamsby/SymptomsTracker/raw/main/images/symptomsHistory.jpg" 
+                 alt="Graphique chronologique de l'intensité des symptômes">
+        </section>
+    </div>
+
+</body>
+</html>
