@@ -42,10 +42,10 @@ class MonthDate:
     
     @property
     def fr(self):
-        return self.date.strftime("%Y-%m")
+        return self.date.strftime("%Y-%m-%d")
     @property
     def en(self):
-        return self.date.strftime("%Y-%m")
+        return self.date.strftime("%Y-%m-%d")
 
 
 @dataclass

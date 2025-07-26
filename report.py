@@ -12,7 +12,7 @@ def run_cmd(self, arg):
     subprocess.run(args)
 
 
-def generate_pdf(patient_name, summary_text, symptoms, key_events, output_pdf, language="fr"):
+def generate_pdf(patient_name, summary_text, symptoms, key_events, output_pdf, language="fr", orientation='Landscape'):
 
     if language == "fr":        
         locale.setlocale(locale.LC_ALL, 'fr_CA.UTF-8')
@@ -39,7 +39,7 @@ def generate_pdf(patient_name, summary_text, symptoms, key_events, output_pdf, l
     options = {
           'encoding': 'UTF-8',
           'page-size': 'A4',
-          'orientation': 'Landscape'
+          'orientation': orientation
       }
 
     config = pdfkit.configuration(wkhtmltopdf='C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
