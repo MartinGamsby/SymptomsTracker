@@ -90,8 +90,8 @@
         }
 
         .timeline li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f3f4f6;
+            /*padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;*/
         }
 
         .timeline li:last-child {
@@ -195,20 +195,19 @@
             <h2>Chronologie des Événements Clés</h2>
             <ul>
                 {% for event in key_events %}
-                <li><strong>{{ event.date.fr }}:</strong> {{ event.description.fr }}</li>
+                <li><strong>{{ event.date.fr }}</strong> {{ event.description.fr }}</li>
                 {% endfor %}
             </ul>
         </section>
 
         <section>
-            <h2>Tableau Détaillé des Symptômes</h2>
+            <h2>Tableau Détaillé des Symptômes ({{symptoms|length}})</h2>
             <table class="symptoms-table">
                 <thead>
                     <tr>
                         <th>Symptôme</th>
-                        <th>Catégorie</th>
-                        <th>Début Approx.</th>
-                        <th>Déclencheur(s)</th>
+                        <th>Première fois remarqué</th>
+                        <!--<th>Déclencheur(s)</th>-->
                         <th>Statut Actuel</th>
                         <th>Remarques</th>
                     </tr>
@@ -217,9 +216,8 @@
                     {% for symptom in symptoms %}
                     <tr>
                         <td>{{ symptom.name.fr }}</td>
-                        <td>{{ symptom.category.fr }}</td>
                         <td>{{ symptom.start_date.fr }}</td>
-                        <td>{{ symptom.triggers.fr }}</td>
+                        <!--<td>symptom.triggers.fr</td>-->
                         <td>{{ symptom.current_status.fr }}</td>
                         <td>{{ symptom.notes.fr }}</td>
                     </tr>
