@@ -16,6 +16,11 @@ def generate_pdf(patient_name, summary_text, symptoms, key_events, notable_event
 
     if language == "fr":        
         locale.setlocale(locale.LC_ALL, 'fr_CA.UTF-8')
+        html_template = 'templates/report.html'
+    else: #en
+        locale.setlocale(locale.LC_ALL, 'en_CA.UTF-8')
+        html_template = 'templates/report_en.html'
+    
     report_date = CompleteDate(datetime.today())
 
     context = { 'patient_name': patient_name,
@@ -29,7 +34,6 @@ def generate_pdf(patient_name, summary_text, symptoms, key_events, notable_event
     template_loader = jinja2.FileSystemLoader('./')
     template_env = jinja2.Environment(loader=template_loader)
 
-    html_template = 'templates/report.html'
     template = template_env.get_template(html_template)
     output_text = template.render(context)
     

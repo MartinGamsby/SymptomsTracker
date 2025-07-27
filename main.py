@@ -251,8 +251,8 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             "Diète d'élimination avec diminution notable des symptômes (~50%). L'alimentation joue un grand rôle. Probablement inflammatoire.",
             "Elimination diet with significant reduction in symptoms (~50%). Diet plays a big role. Probably inflammatory.")),
         Event(String(
-            "Juillet 2023",
-            "July 2023"), String(
+            "&emsp;[Juillet 2023]",
+            "&emsp;[July 2023]"), String(
             "Traitement ostéopathique pour un nerf coincé (recommandation d'un neurologue)",
             "Osteopathic treatment for a pinched nerve (recommended by a neurologist)"), String(
             "Résout quelques symptômes et réduit d'environ 50% le reste.",
@@ -265,15 +265,15 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             "C'était difficile à trouver, parce qu'il y avait des traces dans la mayonnaise, l'avoine, etc. Ça règle pratiquement tout (avec le nerf coincé), jusqu'à ~mai 2025",
             "It was hard to find, because there were traces in mayonnaise, oats, etc. It fixes almost everything (with the pinched nerve), until ~May 2025")),
         Event(String(
-            "Juin 2024",
-            "June 2024"), String(
+            "&emsp;[Juin 2024]",
+            "&emsp;[June 2024]"), String(
             "Sous le conseil d'un médecin: DÉFI GLUTEN: Tous les symptômes reviennent.",
             "Under the advice of a doctor: GLUTEN CHALLENGE: All symptoms come back."), String(
             "Je me sens très mal, et le médecin ne me recontacte pas, la secrétaire m'appelle pour dire que c'est négatif ... après 2 semaines, et plusieurs mois sans en prendre avant, pas demandé mes symptômes ni rien... Sensibilité au gluten confirmée, je continue d'éviter le gluten.",
             "I feel very bad, and the doctor doesn't contact me again, the secretary calls me to say that it's negative... after 2 weeks, and several months without taking it before, not asking about my symptoms or anything... Gluten sensitivity confirmed, I continue avoiding gluten.")),
         Event(String(
-            "Septembre 2024",
-            "September 2024"), String(
+            "&emsp;[Septembre 2024]",
+            "&emsp;[September 2024]"), String(
             "Première grosse réaction depuis longtemps",
             "First major reaction in a long time"), String(
             "J'ai reçu une goutte de bouillon (gluten) dans le visage/yeux. Pas besoin d'en manger... Ce n'est définitivement pas la maladie coeliaque.",
@@ -281,7 +281,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         Event(String(
             f"({months_since_may_2025} mois) Mai 2025 - Aujourd'hui",
             f"({months_since_may_2025} months) May 2025 - Now"), String(
-            "J'étais pratiquement sans symptômes pendant plus qu'un an, mais ça revient, graduellemenbt... Malgré un régime 100% sans gluten",
+            "J'étais pratiquement sans symptômes pendant plus qu'un an, mais ça revient, graduellement... Malgré un régime 100% sans gluten",
             "I was virtually symptom-free for over a year, but it's back, gradually... Despite a 100% gluten-free diet"), String(
             "Après 2 séjours en dehors de la maison, le retour augmente les symptômes, ce n'est pas une coincidence. C'est la maison? De la moisissure?",
             "After two trips away from home, returning home increases symptoms; this is no coincidence. Is it the house? Mold?")),
@@ -594,7 +594,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             ),
         ]
     
-    print("PDF generation start")
+    print("FR PDF generation start")
     generate_pdf(patient_name="Martin Gamsby",
         summary_text=summary_text,
         symptoms=symptoms,
@@ -603,8 +603,20 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         output_pdf='output/rapport.pdf',
         language="fr", 
         orientation='Portrait')#'Landscape')
+        
+    print("EN PDF generation start")
+    generate_pdf(patient_name="Martin Gamsby",
+        summary_text=summary_text,
+        symptoms=symptoms,
+        key_events=key_events,
+        notable_events=notable_events,
+        output_pdf='output/report.pdf',
+        language="en", 
+        orientation='Portrait')#'Landscape')
+        
     print("PDF generation end")
     run_cmd("cmd.exe /c start output\\rapport.pdf")
+    run_cmd("cmd.exe /c start output\\report.pdf")
     #run_cmd("explorer.exe output")
 
 

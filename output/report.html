@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Report - Martin Gamsby</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        /* --- Styles Généraux et Variables --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            /*background-color: #f9fafb;*/
+            color: #111827;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 20px auto;
+            /*padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;*/
+        }
+
+        /* --- Typographie --- */
+        h1, h2, h3 {
+            font-weight: 700;
+            color: #111827;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 24px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #374151;
+            margin-top: 30px;
+            border-bottom: 1px solid #f3f4f6;
+            padding-bottom: 8px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* --- En-tête --- */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #6b7280;
+            margin-left: 30px;
+        }
+
+        .patient-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #4b5563;
+            background-color: #f9fafb;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* --- Chronologie des événements --- */
+        .timeline ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .timeline li {
+            /*padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;*/
+        }
+
+        .timeline li:last-child {
+            border-bottom: none;
+        }
+
+        /* --- Tableau des Symptômes --- */
+        .symptoms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .symptoms-table th, .symptoms-table td {
+            border: 1px solid #e5e7eb;
+            padding: 9px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .symptoms-table thead {
+            background-color: #f9fafb;
+        }
+
+        .symptoms-table th {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .symptoms-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        /* --- Graphique --- */
+        .chart-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .chart-container img {
+            max-width: 97%;
+            height: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 10px;
+        }
+
+        /* --- Styles pour l'impression --- */
+        @media print {
+            @page {
+                size: landscape;
+                margin: 1.5cm; /* Marges d'impression standard */
+            }
+
+            body {
+                background-color: #ffffff;
+                font-size: 11pt;
+            }
+
+            .container {
+                box-shadow: none;
+                border: none;
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            h1, h2 {
+                page-break-after: avoid;
+            }
+            
+            .symptoms-table, .timeline {
+                page-break-inside: avoid;
+            }
+            
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Medical Report and Chronology of Symptoms - Martin Gamsby</h1>
+            <div class="patient-info">
+                <span><strong>Report creation date :</strong> July 26 2025</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Summary of the Situation</h2>
+            <p>
+                Severe multisystem symptoms since December 2022. A pinched nerve and a 100% gluten-free diet resolved the symptoms for a few months.
+But the symptoms gradually returned.
+<br /><br />
+New discovery: symptoms intensify each time returning home after an absence (suspected mold).
+            </p>
+        </section>
+
+        <section class="chart-container">
+            <h2>Symptom Intensity Timeline Chart</h2>
+            <img src="https://github.com/MartinGamsby/SymptomsTracker/raw/main/images/symptomsHistory_en.jpg" 
+                 alt="Symptom Intensity Timeline Chart">
+        </section>
+
+        <section class="timeline">
+            <h2>Timeline of Key Events</h2>
+            <ul>
+                
+                <li><strong>(6 months)December 2022 - June 2023:</strong> Onset of severe neurological symptoms, coinciding with water damage</li>
+                <li class="subtitle">Escalation of symptoms until their peak severity. Multiple medical consultations and tests (Blood tests, EMG, MRI) without conclusive results.</li>
+                
+                <li><strong>(8 months) June 2023 - February 2024:</strong> Nutritionist.</li>
+                <li class="subtitle">Elimination diet with significant reduction in symptoms (~50%). Diet plays a big role. Probably inflammatory.</li>
+                
+                <li><strong>&emsp;[July 2023]:</strong> Osteopathic treatment for a pinched nerve (recommended by a neurologist)</li>
+                <li class="subtitle">Resolves some symptoms and reduces the rest by about 50%.</li>
+                
+                <li><strong>(15 months) February 2024 -  May 2025:</strong> I had an epiphany : gluten. </li>
+                <li class="subtitle">It was hard to find, because there were traces in mayonnaise, oats, etc. It fixes almost everything (with the pinched nerve), until ~May 2025</li>
+                
+                <li><strong>&emsp;[June 2024]:</strong> Under the advice of a doctor: GLUTEN CHALLENGE: All symptoms come back.</li>
+                <li class="subtitle">I feel very bad, and the doctor doesn't contact me again, the secretary calls me to say that it's negative... after 2 weeks, and several months without taking it before, not asking about my symptoms or anything... Gluten sensitivity confirmed, I continue avoiding gluten.</li>
+                
+                <li><strong>&emsp;[September 2024]:</strong> First major reaction in a long time</li>
+                <li class="subtitle">I got a drop of broth (gluten) in my face/eyes. No need to eat it... It's definitely not celiac disease.</li>
+                
+                <li><strong>(2 months) May 2025 - Now:</strong> I was virtually symptom-free for over a year, but it's back, gradually... Despite a 100% gluten-free diet</li>
+                <li class="subtitle">After two trips away from home, returning home increases symptoms; this is no coincidence. Is it the house? Mold?</li>
+                
+            </ul>
+        </section>
+
+        <section>
+            <h2>Detailed Symptom Table (24) - Chronological</h2>
+            <table class="symptoms-table">
+                <thead>
+                    <tr>
+                        <th>Symptom</th>
+                        <th>First time noticed</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Numbness</td>
+                        <td>Dec 21 2022</td>
+                        <td>Sometimes localized. Sometimes the whole body (starting April 2023). I don't feel a plucked hair, a bleeding nose, my foot on the ground. Knocking on a door... I don't feel anything. I tried it on brick. Nothing. etc.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Heart Palpitations</td>
+                        <td>Dec 25 2022</td>
+                        <td>More often in the evening, sometimes waking up with palpitations, sweating, numbness.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Clumsy</td>
+                        <td>Dec 26 2022</td>
+                        <td>Dexterity issues, dropping things. Turning pages, keyboard and piano difficulties. Gets caught on everything. Slurred words.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Muscle weakness</td>
+                        <td>Jan 13 2023</td>
+                        <td>Found to be caused by a pinched nerve. Before: difficulty closing fingers, picking up a plate with fingertips.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>General weakness</td>
+                        <td>Feb 04 2023</td>
+                        <td>Before nerve unpinched, sometimes impossible to walk without having to lean on something. Doesn't throw strong enough, etc.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Fatigue</td>
+                        <td>Feb 09 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dizziness / Loss of balance</td>
+                        <td>Feb 13 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Tremors</td>
+                        <td>Feb 14 2023</td>
+                        <td>100% resolved after nerve unpinched</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Difficulty breathing / Rapid shortness of breath</td>
+                        <td>Feb 15 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>'Pressure' in throat, temples, ears</td>
+                        <td>Mar 01 2023</td>
+                        <td>Most often after eating, at the worst the temples are visibly swollen.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>'Always Thirsty' (sometimes)</td>
+                        <td>Mar 06 2023</td>
+                        <td>It only happened once or twice.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Frequent urge to go to the toilet</td>
+                        <td>Mar 06 2023</td>
+                        <td>Idem.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Headache</td>
+                        <td>Mar 06 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Body aches</td>
+                        <td>Mar 28 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Loss of urge to go to the toilet</td>
+                        <td>Apr 17 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Loss of sensation of hot/cold</td>
+                        <td>Apr 17 2023</td>
+                        <td>Besides the sensation on my hands: I almost burned myself (I realized it was hot, it wasn't a reflex), another time I realized I was shivering. But I wasn't cold.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Irritability</td>
+                        <td>Apr 19 2023</td>
+                        <td>I seem to be more irritable than before... Hard to measure.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Loss of thirst/hunger sensation</td>
+                        <td>Apr 25 2023</td>
+                        <td>I first realized it after several days of not feeling anything. When it came back, I was very thirsty... I forgot to drink.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Unusual pain</td>
+                        <td>Apr 26 2023</td>
+                        <td>Sometimes I have pain that's hard to describe... does it burn? No... does it 'pinch'? No... Sometimes it stings and I can't stop scratching. This has never happened to me before.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Difficulty concentrating / learning</td>
+                        <td>May 08 2023</td>
+                        <td>I noticed it late, but looking back, it happened often. It didn't happen before.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Insomnia</td>
+                        <td>May 30 2023</td>
+                        <td>I seem to have more difficulty falling asleep when I have the most other symptoms during the day.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Stomach ache</td>
+                        <td>Jun 03 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nausea</td>
+                        <td>Jul 02 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Blocked nose</td>
+                        <td>Jun 04 2024</td>
+                        <td>I noticed it late, but looking back, it happened often, especially at night, without having a cold. It didn't happen before.</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <p>I have a spreadsheet with the details for each day since the beginning, but the summary above is probably sufficient.</p>
+        </section>
+    </div>
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rapport Médical - {{ patient_name }}</title>
+    <title>Medical Report - {{ patient_name }}</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
@@ -177,69 +177,57 @@
 
     <div class="container">
         <header class="header">
-            <h1>Rapport Médical et Chronologie des Symptômes - {{ patient_name }}</h1>
-            <!--<p class="subtitle">Préparé pour consultation</p>-->
+            <h1>Medical Report and Chronology of Symptoms - {{ patient_name }}</h1>
             <div class="patient-info">
-                <span><strong>Date de création du rapport :</strong> {{ report_date.fr }}</span>
+                <span><strong>Report creation date :</strong> {{ report_date.en }}</span>
             </div>
         </header>
 
         <section>
-            <h2>Résumé de la Situation</h2>
+            <h2>Summary of the Situation</h2>
             <p>
-                {{ summary_text.fr }}
+                {{ summary_text.en }}
             </p>
         </section>
 
         <section class="chart-container">
-            <h2>Graphique Chronologique de l'Intensité des Symptômes</h2>
-            <!--<p style="font-size:14px; color:#6b7280;">Ce graphique illustre l'évolution de l'intensité des principaux symptômes au fil du temps.</p>-->
-            <img src="https://github.com/MartinGamsby/SymptomsTracker/raw/main/images/symptomsHistory.jpg" 
-                 alt="Graphique chronologique de l'intensité des symptômes">
+            <h2>Symptom Intensity Timeline Chart</h2>
+            <img src="https://github.com/MartinGamsby/SymptomsTracker/raw/main/images/symptomsHistory_en.jpg" 
+                 alt="Symptom Intensity Timeline Chart">
         </section>
 
         <section class="timeline">
-            <h2>Chronologie des Événements Clés</h2>
+            <h2>Timeline of Key Events</h2>
             <ul>
                 {% for event in key_events %}
-                <li><strong>{{ event.date.fr }}:</strong> {{ event.description.fr }}</li>
-                <li class="subtitle">{{ event.details.fr }}</li>
+                <li><strong>{{ event.date.en }}:</strong> {{ event.description.en }}</li>
+                <li class="subtitle">{{ event.details.en }}</li>
                 {% endfor %}
             </ul>
         </section>
 
         <section>
-            <h2>Tableau Détaillé des Symptômes ({{symptoms|length}}) - Chronologique</h2>
+            <h2>Detailed Symptom Table ({{symptoms|length}}) - Chronological</h2>
             <table class="symptoms-table">
                 <thead>
                     <tr>
-                        <th>Symptôme</th>
-                        <th>Première fois remarqué</th>
-                        <th>Remarques</th>
+                        <th>Symptom</th>
+                        <th>First time noticed</th>
+                        <th>Notes</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for symptom in symptoms %}
                     <tr>
-                        <td>{{ symptom.name.fr }}</td>
-                        <td>{{ symptom.start_date.fr }}</td>
-                        <td>{{ symptom.notes.fr }}</td>
+                        <td>{{ symptom.name.en }}</td>
+                        <td>{{ symptom.start_date.en }}</td>
+                        <td>{{ symptom.notes.en }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
-            <p>J'ai un tableur avec les détails pour chaque jour depuis le début, mais le résumé ci-dessus est probablement suffisant.</p>
+            <p>I have a spreadsheet with the details for each day since the beginning, but the summary above is probably sufficient.</p>
         </section>
-        
-        <!--<section class="timeline">
-            <h2>Chronologie Détaillée des Événements Notables (Redondance avec les évènements clés plus haut)</h2>
-            <ul>
-                {% for event in notable_events %}
-                <li><strong>{{ event.date.fr }}</strong> {{ event.description.fr }}</li>
-                <li class="subtitle">{{ event.details.fr }}</li>
-                {% endfor %}
-            </ul>
-        </section>-->
     </div>
 
 </body>
