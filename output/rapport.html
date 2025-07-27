@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport Médical - Martin Gamsby</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        /* --- Styles Généraux et Variables --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            /*background-color: #f9fafb;*/
+            color: #111827;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 20px auto;
+            /*padding: 30px;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;*/
+        }
+
+        /* --- Typographie --- */
+        h1, h2, h3 {
+            font-weight: 700;
+            color: #111827;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 24px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #374151;
+            margin-top: 30px;
+            border-bottom: 1px solid #f3f4f6;
+            padding-bottom: 8px;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* --- En-tête --- */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: #6b7280;
+            margin-left: 20px;
+        }
+
+        .patient-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #4b5563;
+            background-color: #f9fafb;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* --- Chronologie des événements --- */
+        .timeline ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .timeline li {
+            /*padding: 8px 0;
+            border-bottom: 1px solid #f3f4f6;*/
+        }
+
+        .timeline li:last-child {
+            border-bottom: none;
+        }
+
+        /* --- Tableau des Symptômes --- */
+        .symptoms-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .symptoms-table th, .symptoms-table td {
+            border: 1px solid #e5e7eb;
+            padding: 9px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .symptoms-table thead {
+            background-color: #f9fafb;
+        }
+
+        .symptoms-table th {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .symptoms-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        /* --- Graphique --- */
+        .chart-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .chart-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            padding: 10px;
+        }
+
+        /* --- Styles pour l'impression --- */
+        @media print {
+            @page {
+                size: landscape;
+                margin: 1.5cm; /* Marges d'impression standard */
+            }
+
+            body {
+                background-color: #ffffff;
+                font-size: 11pt;
+            }
+
+            .container {
+                box-shadow: none;
+                border: none;
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            h1, h2 {
+                page-break-after: avoid;
+            }
+            
+            .symptoms-table, .timeline {
+                page-break-inside: avoid;
+            }
+            
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Rapport Médical et Chronologie des Symptômes - Martin Gamsby</h1>
+            <!--<p class="subtitle">Préparé pour consultation</p>-->
+            <div class="patient-info">
+                <span><strong>Date de création du rapport :</strong> 26 juillet 2025</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Résumé de la Situation</h2>
+            <p>
+                Symptômes multi-systémiques sévères depuis décembre 2022. Nerf décoincé et régime 100% sans gluten ont résolu les symptômes quelques mois.
+Mais les symptômes reviennent graduellement.
+<br /><br />
+Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile après une absence (Moisissure soupçonnée).
+            </p>
+        </section>
+
+        <section class="chart-container">
+            <h2>Graphique Chronologique de l'Intensité des Symptômes</h2>
+            <!--<p style="font-size:14px; color:#6b7280;">Ce graphique illustre l'évolution de l'intensité des principaux symptômes au fil du temps.</p>-->
+            <img src="https://github.com/MartinGamsby/SymptomsTracker/raw/main/images/symptomsHistory.jpg" 
+                 alt="Graphique chronologique de l'intensité des symptômes">
+        </section>
+
+        <section class="timeline">
+            <h2>Chronologie des Événements Clés</h2>
+            <ul>
+                
+                <li><strong>(6 mois) Décembre 2022 - Juin 2023:</strong> Début de symptômes neurologiques sévères, coïncidant avec un dégât d'eau</li>
+                <li class="subtitle">Escalade des symptômes jusqu'à leur pic de sévérité. Multiples consultations médicales et tests (Sang, EMG, IRM) sans résultats concluants.</li>
+                
+                <li><strong>(8 mois) Juin 2023 - Février 2024:</strong> Suivi Nutritionniste.</li>
+                <li class="subtitle">Diète d'élimination avec diminution notable des symptômes (~50%). L'alimentation joue un grand rôle. Probablement inflammatoire.</li>
+                
+                <li><strong>Juillet 2023:</strong> Traitement ostéopathique pour un nerf coincé (recommandation d'un neurologue)</li>
+                <li class="subtitle">Résout quelques symptômes et réduit d'environ 50% le reste.</li>
+                
+                <li><strong>(15 mois) Février 2024 - Mai 2025:</strong> J'ai une révélation : le gluten.</li>
+                <li class="subtitle">C'était difficile à trouver, parce qu'il y avait des traces dans la mayonnaise, l'avoine, etc. Ça règle pratiquement tout (avec le nerf coincé), jusqu'à ~mai 2025</li>
+                
+                <li><strong>Juin 2024:</strong> Sous le conseil d'un médecin: DÉFI GLUTEN: Tous les symptômes reviennent.</li>
+                <li class="subtitle">Je me sens très mal, et le médecin ne me recontacte pas, la secrétaire m'appelle pour dire que c'est négatif ... après 2 semaines, et plusieurs mois sans en prendre avant, pas demandé mes symptômes ni rien... Sensibilité au gluten confirmée, je continue d'éviter le gluten.</li>
+                
+                <li><strong>Septembre 2024:</strong> Première grosse réaction depuis longtemps</li>
+                <li class="subtitle">J'ai reçu une goutte de bouillon (gluten) dans le visage/yeux. Pas besoin d'en manger... Ce n'est définitivement pas la maladie coeliaque.</li>
+                
+                <li><strong>(2 mois) Mai 2025 - Aujourd'hui:</strong> J'étais pratiquement sans symptômes pendant plus qu'un an, mais ça revient, graduellemenbt... Malgré un régime 100% sans gluten</li>
+                <li class="subtitle">Après 2 séjours en dehors de la maison, le retour augmente les symptômes, ce n'est pas une coincidence. C'est la maison? De la moisissure?</li>
+                
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tableau Détaillé des Symptômes (24) - Chronologique</h2>
+            <table class="symptoms-table">
+                <thead>
+                    <tr>
+                        <th>Symptôme</th>
+                        <th>Première fois remarqué</th>
+                        <th>Remarques</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td>Engourdissement</td>
+                        <td>21 déc. 2022</td>
+                        <td>Parfois locallisé. Quelques périodes le corps au complet (à partir d'avril 2023). Je ne sens pas un poil épilé, un nez qui saigne, mon pied par terre. Cogner sur une porte... Je sens rien. J'ai essayé sur de la brique. Rien. etc.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Palpitations</td>
+                        <td>25 déc. 2022</td>
+                        <td>Plus souvent le soir, quelques fois réveillé avec palpitations, sueurs, engourdissements.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Maladroit</td>
+                        <td>26 déc. 2022</td>
+                        <td>Problèmes de dextérité, échappe les choses. Tourner les pages, clavier et piano difficiles. S'accroche partout. Mots mal articulés.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Faiblesse musculaire</td>
+                        <td>13 janv. 2023</td>
+                        <td>Finalement trouvé que c'était dû à un nerf coincé. Avant: difficulté à fermer les doigts, à prendre une assiette à bout de doigts.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Faiblesse générale</td>
+                        <td>04 févr. 2023</td>
+                        <td>Avant le nerf décoincé, parfois impossible de marcher sans devoir s'appuyer sur quelque chose. Lance pas assez fort, etc.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Fatigue</td>
+                        <td>09 févr. 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Étourdissements / Manque d'équilibre</td>
+                        <td>13 févr. 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Tremblements</td>
+                        <td>14 févr. 2023</td>
+                        <td>Résolu à 100% après nerf décoincé</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Respiration difficile / Essouflement rapide</td>
+                        <td>15 févr. 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>'Pression' gorge, tempes, oreilles</td>
+                        <td>01 mars 2023</td>
+                        <td>Le plus souvent après avoir mangé, au pire les tempes sont visiblement enflées.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>'Toujours Soif' (parfois)</td>
+                        <td>06 mars 2023</td>
+                        <td>C'est arrivé seulement une ou 2 fois.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Envie d'aller aux toilettes fréquente</td>
+                        <td>06 mars 2023</td>
+                        <td>Idem.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Mal de tête</td>
+                        <td>06 mars 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Courbatures</td>
+                        <td>28 mars 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Perte de l'envie d'aller aux toilettes</td>
+                        <td>17 avr. 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Perte de sensation de chaud/froid</td>
+                        <td>17 avr. 2023</td>
+                        <td>Outre la sensation sur les mains: J'ai faillit me brûler (j'ai réalisé que c'était chaud, ce n'était pas un réflexe), une autre fois j'ai réalisé que je grelottait. Mais je n'avais pas froid.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Irritabilité</td>
+                        <td>19 avr. 2023</td>
+                        <td>Je semble être plus irritable qu'avant ... Difficile à mesurer.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Perte de sensation de soif/faim</td>
+                        <td>25 avr. 2023</td>
+                        <td>J'ai réalisé la première fois après plusieurs jours où je ne sentais rien. Quand c'est revenu, j'avais très soif... J'ai oublié de boire.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Douleur inhabituelle</td>
+                        <td>26 avr. 2023</td>
+                        <td>Parfois j'ai des douleurs difficile à décrire... ça brule? non.. ça 'pince'? non... Parfois ça pique et je ne peux pas m'empêcher de gratter. Ça ne m'était jamais arrivé avant.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Difficulté à se concentrer / apprendre</td>
+                        <td>08 mai 2023</td>
+                        <td>Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent. Ça n'arrivait pas avant.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Insomnie</td>
+                        <td>30 mai 2023</td>
+                        <td>Je semble avoir plus de difficulté à m'endormir quand j'ai le plus d'autres symptômes dans la journée.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Mal au ventre</td>
+                        <td>03 juin 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nausée</td>
+                        <td>02 juil. 2023</td>
+                        <td></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nez bloqué</td>
+                        <td>04 juin 2024</td>
+                        <td>Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent, surtout la nuit, sans avoir de rhume. Ça n'arrivait pas avant.</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <p>J'ai un tableur avec les détails pour chaque jour depuis le début, mais le résumé ci-dessus est probablement suffisant.</p>
+        </section>
+        
+        <section class="timeline">
+            <ul>
+            <h2>Chronologie Détaillée des Événements Notables (Redondance avec les évènements clés plus haut)</h2>
+                
+                <li><strong><div style='text-align:center'>2022</div></strong> </li>
+                <li class="subtitle"></li>
+                
+                <li><strong>déc. 2022</strong> Orteil cassé.</li>
+                <li class="subtitle">Important parce que je ne suis pas maladroit d'habitude. Mais j'ai commencé à le devenir et avec du recul, c'était déjà commencé, avec une baisse de sensibilité aussi. Tout devient pire à chaque semaine à partir d'ici.</li>
+                
+                <li><strong><div style='text-align:center'>2023</div></strong> </li>
+                <li class="subtitle"></li>
+                
+                <li><strong>févr. 2023</strong> Premier espoir: ça va un peu mieux après une 'retraite' de 2 jours avec spa.</li>
+                <li class="subtitle">Première amélioration depuis le début, 2 mois auparavant.</li>
+                
+                <li><strong>févr. 2023</strong> Tout devient pire à chaque semaine. Je prends rendez-vous avec un médecin.</li>
+                <li class="subtitle"></li>
+                
+                <li><strong>févr. 2023</strong> Rendez-vous avec le médecin: Tests sanguins, EMG.</li>
+                <li class="subtitle"></li>
+                
+                <li><strong>mars 2023</strong> Réveil avec la 'pression', palpitations, sueurs, membres lourds.</li>
+                <li class="subtitle"></li>
+                
+                <li><strong>mars 2023</strong> Rendez-vous avec un 2e médecin: C'était quoi, le diabète? (De l'hypoglycémie? Anémie?)</li>
+                <li class="subtitle">Il a dit 'C'est de l'anxiété'</li>
+                
+                <li><strong>mars 2023</strong> EMG + visite neurologue: EMG ok, neurologue dit que ça peut être un nerf coincé.</li>
+                <li class="subtitle"></li>
+                
+                <li><strong>avr. 2023</strong> Je saigne du nez.</li>
+                <li class="subtitle">Rien d'inquiétant, mais je réalise plus tard que c'est parce que je ne sentait pas mon nez et j'ai trop gratté (sans rien sentir). Ça fait combien de temps?</li>
+                
+                <li><strong>avr. 2023</strong> 2e rendez-vous avec le 1er médecin (suivi)</li>
+                <li class="subtitle">Je parles de la perte de sensation. Elle me prescrit des vitamines B12 (sang: dans les normes, mais bas), et demande un IRM (pour éliminer la sclérose en plaques)</li>
+                
+                <li><strong>avr. 2023</strong> Rendez-vous avec un ostéopathe pour le nerf coincé (Aucune différence notable après)</li>
+                <li class="subtitle"></li>
+                
+                <li><strong>avr. 2023</strong> IRM 1</li>
+                <li class="subtitle"></li>
+                
+                <li><strong>mai 2023</strong> IRM 2 (+Gadolinium)</li>
+                <li class="subtitle"></li>
+                
+                <li><strong>juin 2023</strong> Résultat d'IRM: Rien</li>
+                <li class="subtitle">seulement télangiectasie? 6mm?</li>
+                
+                <li><strong>juin 2023</strong> Nutritionniste</li>
+                <li class="subtitle">Diète d'élimination avec diminution notable des symptômes (~50%)</li>
+                
+                <li><strong>juil. 2023</strong> Traitement ostéopathique pour un nerf coincé (recommandation d'un neurologue)</li>
+                <li class="subtitle">Résout quelques symptômes et réduit d'environ 50% le reste.</li>
+                
+                <li><strong>sept. 2023</strong> Rendez-vous avec l'ostéopathe.</li>
+                <li class="subtitle">Peut-être qu'il peut régler ce qui reste...</li>
+                
+                <li><strong>nov. 2023</strong> Rendez-vous avec l'ostéopathe...</li>
+                <li class="subtitle"></li>
+                
+                <li><strong>nov. 2023</strong> Rendez-vous avec l'ostéopathe...</li>
+                <li class="subtitle"></li>
+                
+                <li><strong><div style='text-align:center'>2024</div></strong> </li>
+                <li class="subtitle"></li>
+                
+                <li><strong>déc. 2024</strong> Rendez-vous avec un 2e acupuncteur.</li>
+                <li class="subtitle">Ça règle un autre 80% de ma perte de sensibilité.</li>
+                
+                <li><strong>févr. 2024</strong> J'ai eu une révélation : le gluten.</li>
+                <li class="subtitle">C'était difficile à trouver, parce qu'il y avait des traces dans la mayonnaise, l'avoine, etc.</li>
+                
+                <li><strong>avr. 2024</strong> Rendez-vous avec un 3e médecin: Coeliaque?</li>
+                <li class="subtitle">Ils veulent que je fasse un gluten challenge pour tester (ça fait des mois que j'ai arrêté le gluten)</li>
+                
+                <li><strong>juin 2024</strong> DÉFI GLUTEN: Tous les symptômes reviennent.</li>
+                <li class="subtitle">Je me sens très mal, et le médecin ne me recontacte pas, la secrétaire m'appelle pour dire que c'est négatif ... après 2 semaines, et plusieurs mois sans en prendre avant, pas demandé mes symptômes ni rien...</li>
+                
+                <li><strong>sept. 2024</strong> Première grosse réaction depuis longtemps</li>
+                <li class="subtitle">J'ai reçu une goutte de bouillon (gluten) dans le visage/yeux. Pas besoin d'en manger...</li>
+                
+                <li><strong><div style='text-align:center'>2025</div></strong> </li>
+                <li class="subtitle"></li>
+                
+                <li><strong>mai 2025</strong> J'étais pratiquement sans symptômes pendant plus qu'un an, mais ça revient...</li>
+                <li class="subtitle">'Pression' et respiration difficile après avoir mangé une pizza sans gluten. (Et ça continue pour d'autres aliments, de plus en plus)</li>
+                
+                <li><strong>juil. 2025</strong> Ça revient les symptômes ...</li>
+                <li class="subtitle">(Je reviens de 3 nuits en camping)</li>
+                
+                <li><strong>juil. 2025</strong> Après 3 nuits à la maison, je retourne 4 autres nuits à l'extérieur.</li>
+                <li class="subtitle">Ok ce n'est pas une coïncidence, je réagis à ma maison aussi (en arrivant), pas juste la bouffe. Et c'est pire que le dernier retour.</li>
+                
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>

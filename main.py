@@ -14,81 +14,112 @@ def run_cmd(arg):
 def main():
     print("Initializing")
     
-    summary_text = String("""- Symptômes multi-systémiques sévères depuis décembre 2022.
-<br />
-- Nerf décoincé a résolu quelques symptômes et réduit la majorité des symptômes pendant plusieurs mois.
-<br />
-- Les symptômes reviennent ensuite lentement. Sensibilité sévère au gluten trouvée par élimination, et son retrait complet a résolu la majorité des symptômes pendant plusieurs mois.
-<br />
-- Les symptômes reviennent ensuite lentement malgré un régime strict, et s'intensifient à chaque retour au domicile après une absence (Moisissure soupçonnée).""",
+    summary_text = String("""Symptômes multi-systémiques sévères depuis décembre 2022. Nerf décoincé et régime 100% sans gluten ont résolu les symptômes quelques mois.
+Mais les symptômes reviennent graduellement.
+<br /><br />
+Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile après une absence (Moisissure soupçonnée).""",
 
-    """- Severe multisystem symptoms since December 2022.
-<br />
-- Unpinched nerve resolved some symptoms and reduced the majority of symptoms for several months.
-<br />
-- Symptoms then slowly return. Severe gluten sensitivity was found through an elimination diet, and complete removal resolved most symptoms for several months.
-<br />
-- Symptoms then return slowly despite a strict diet, and intensify each time you return home after an absence (suspected mold).""")
+    """Severe multisystem symptoms since December 2022. A pinched nerve and a 100% gluten-free diet resolved the symptoms for a few months.
+But the symptoms gradually returned.
+<br /><br />
+New discovery: symptoms intensify each time returning home after an absence (suspected mold).""")
 
 
 
-    key_events = [
-        Event(String("<div style='text-align:center'>2022</div>",""), String("","")),
+    notable_events = [
+        Event(String("<div style='text-align:center'>2022</div>",""), String("",""), String("","")),
         Event(MonthDate(datetime(
             2022, 12, 20)), String(
-            "Orteil cassé. Important parce que je ne suis pas maladroit d'habitude. Mais j'ai commencé à le devenir et avec du recul, c'était déjà commencé, avec une baisse de sensibilité aussi. Tout devient pire à chaque semaine à partir d'ici.", 
-            "Broken toe. Important because I'm not usually clumsy. But I started to become clumsy, and looking back, it had already started, with a decrease in sensitivity as well. Everything is getting worse every week starting here.")),
-        Event(String("<div style='text-align:center'>2023</div>",""), String("","")),
+            "Orteil cassé.", 
+            "Broken toe."), String(
+            "Important parce que je ne suis pas maladroit d'habitude. Mais j'ai commencé à le devenir et avec du recul, c'était déjà commencé, avec une baisse de sensibilité aussi. Tout devient pire à chaque semaine à partir d'ici.",
+            "Important because I'm not usually clumsy. But I started to become clumsy, and looking back, it had already started, with a decrease in sensitivity as well. Everything is getting worse every week starting here.")),
+
+        Event(String("<div style='text-align:center'>2023</div>",""), String("",""), String("","")),
+        
         Event(MonthDate(datetime(
             2023, 2, 12)), String(
-            "Premier espoir: ça va un peu mieux après une 'retraite' de 2 jours avec spa. Première amélioration depuis le début, 2 mois auparavant.", 
-            "First hope: I'm feeling a little better after a two-day spa 'retreat'. This is the first improvement since it started, two months ago.")),
+            "Premier espoir: ça va un peu mieux après une 'retraite' de 2 jours avec spa.", 
+            "First hope: I'm feeling a little better after a two-day spa 'retreat'."), String(
+            "Première amélioration depuis le début, 2 mois auparavant.",
+            "This is the first improvement since it started, two months ago.")),
         Event(MonthDate(datetime(
             2023, 2, 15)), String(
             "Tout devient pire à chaque semaine. Je prends rendez-vous avec un médecin.", 
-            "Everything is getting worse every week. I make an appointment with a doctor.")),
+            "Everything is getting worse every week. I make an appointment with a doctor."), String(
+            "",
+            "")),
         Event(MonthDate(datetime(
             2023, 2, 28)), String(
             "Rendez-vous avec le médecin: Tests sanguins, EMG.", 
-            "Appointment with the doctor: Blood tests, EMG.")),
+            "Appointment with the doctor: Blood tests, EMG."), String(
+            "",
+            "")),
         #Event(MonthDate(datetime(
         #    2023, 3, 1)), String(
         #    "Le symptôme de 'pression' semble apparaître après la prise de sang. Et d'autres symptômes ont une 2e vague.",
         #    "The 'pressure' symptom seems to appear after the blood test. And other symptoms have a 2nd wave.")),
         Event(MonthDate(datetime(
             2023, 3, 7)), String(
-            "Réveil avec la 'pression', palpitations, membres lourds.",
-            "Waking up with 'pressure', palpitations, heavy limbs.")),
+            "Réveil avec la 'pression', palpitations, sueurs, membres lourds.",
+            "Waking up with 'pressure', palpitations, sweat, heavy limbs."), String(
+            "",
+            "")),
         Event(MonthDate(datetime(
             2023, 3, 13)), String(
-            "Rendez-vous avec un 2e médecin: C'était quoi, le diabète? (De l'hypoglycémie? Anémie?) -- Il a dit 'C'est de l'anxiété'", 
-            "Appointment with a 2nd doctor: What was that? diabetes? (Hypoglycemia? Anemia?) -- He said 'It's anxiety'")),
+            "Rendez-vous avec un 2e médecin: C'était quoi, le diabète? (De l'hypoglycémie? Anémie?)", 
+            "Appointment with a 2nd doctor: What was that? diabetes? (Hypoglycemia? Anemia?)"), String(
+            "Il a dit 'C'est de l'anxiété'",
+            "He said 'It's anxiety'")),
         Event(MonthDate(datetime(
             2023, 3, 27)), String(
             "EMG + visite neurologue: EMG ok, neurologue dit que ça peut être un nerf coincé.", 
-            "EMG + neurologist visit: EMG ok, neurologist says it could be a pinched nerve.")),
+            "EMG + neurologist visit: EMG ok, neurologist says it could be a pinched nerve."), String(
+            "",
+            "")),
         Event(MonthDate(datetime(
             2023, 4, 3)), String(
-            "Je saigne du nez. Rien d'inquiétant, mais je réalise plus tard que c'est parce que je ne sentait pas mon nez et j'ai trop gratté (sans rien sentir). Ça fait combien de temps?",
-            "My nose is bleeding. Nothing concerning, but I later realize it's because I couldn't feel my nose and I scratched too much (without feeling anything). How long has it been?")),
+            "Je saigne du nez.",
+            "My nose is bleeding."), String(
+            "Rien d'inquiétant, mais je réalise plus tard que c'est parce que je ne sentait pas mon nez et j'ai trop gratté (sans rien sentir). Ça fait combien de temps?",
+            "Nothing concerning, but I later realize it's because I couldn't feel my nose and I scratched too much (without feeling anything). How long has it been?")),
         Event(MonthDate(datetime(
             2023, 4, 18)), String(
-            "2e rendez-vous avec le 1er médecin (suivi):  Je parles de la perte de sensation. Elle me prescrit des vitamines B12 (sang: dans les normes, mais bas), et demande un IRM (pour éliminer la sclérose en plaques)", 
-            "2nd appointment with the 1st doctor (follow-up): I talk about the loss of sensation. She prescribes me vitamin B12 (blood: within the norm, but low), and orders an MRI (to rule out multiple sclerosis)")),
+            "2e rendez-vous avec le 1er médecin (suivi)", 
+            "2nd appointment with the 1st doctor (follow-up)"), String(
+            "Je parles de la perte de sensation. Elle me prescrit des vitamines B12 (sang: dans les normes, mais bas), et demande un IRM (pour éliminer la sclérose en plaques)",
+            "I talk about the loss of sensation. She prescribes me vitamin B12 (blood: within the norm, but low), and orders an MRI (to rule out multiple sclerosis)")),
         Event(MonthDate(datetime(
             2023, 4, 20)), String(
             "Rendez-vous avec un ostéopathe pour le nerf coincé (Aucune différence notable après)", 
-            "Appointment with an osteopath for the pinched nerve (No noticeable difference after)")),
+            "Appointment with an osteopath for the pinched nerve (No noticeable difference after)"), String(
+            "",
+            "")),
         Event(MonthDate(datetime(
             2023, 4, 25)), String(
-            "IRM 1", "")),
+            "IRM 1", ""), String(
+            "",
+            "")),
         Event(MonthDate(datetime(
             2023, 5, 12)), String(
-            "IRM 2 (+Gadolinium)", "")),
+            "IRM 2 (+Gadolinium)", ""), String(
+            "",
+            "")),
         Event(MonthDate(datetime(
             2023, 6, 1)), String(
-            "Résultat d'IRM: Rien, seulement télangiectasie? 6mm?",
-            "MRI result: Nothing, just a telangiectasia? 6mm?")),
+            "Résultat d'IRM: Rien",
+            "MRI result: Nothing"), String(
+            "seulement télangiectasie? 6mm?",
+            "just a telangiectasia? 6mm?")),
+        Event(MonthDate(datetime(
+            2023, 6, 9)), String(
+            "Nutritionniste",
+            "Nutritionist"), String(
+            "Diète d'élimination avec diminution notable des symptômes (~50%)",
+            "Elimination diet with significant reduction in symptoms (~50%).")),
+            
+            
+            
         #Event(MonthDate(datetime(
         #    2023, 6, 13)), String(
         #    "Rendez-vous avec un massothérapeute pour 'préparer' pour l'acupuncture (on essaye tout)", 
@@ -99,25 +130,37 @@ def main():
         #    "Appointment with an acupuncturist (we try everything): ask if it's an intolerance or allergy (I don't know)")),
         Event(MonthDate(datetime(
             2023, 7, 5)), String(
-            "Rendez-vous avec un 2e ostéopathe pour le nerf coincé (On réessaye): Ça va mieux! J'ai encore le manque de sensibilité, mais ça va 80% mieux, je suis content.",
-            "Appointment with a 2nd osteopath for the trapped nerve (We'll try again): I'm getting better! I still have the lack of sensitivity, but it's 80% better, I'm happy.")),
+            "Traitement ostéopathique pour un nerf coincé (recommandation d'un neurologue)",
+            "Osteopathic treatment for a pinched nerve (recommended by a neurologist)"), String(
+            "Résout quelques symptômes et réduit d'environ 50% le reste.",
+            "Resolves some symptoms and reduces the rest by about 50%.")),
         Event(MonthDate(datetime(
             2023, 9, 12)), String(
-            "Rendez-vous avec l'ostéopathe. Peut-être qu'il peut régler ce qui reste...",
-            "Appointment with the osteopath. Maybe he can fix what's left...")),
+            "Rendez-vous avec l'ostéopathe.",
+            "Appointment with the osteopath."), String(
+            "Peut-être qu'il peut régler ce qui reste...",
+            "Maybe he can fix what's left...")),
         Event(MonthDate(datetime(
             2023, 11, 8)), String(
             "Rendez-vous avec l'ostéopathe...",
-            "Appointment with the osteopath...")),
+            "Appointment with the osteopath..."), String(
+            "",
+            "")),
         Event(MonthDate(datetime(
             2023, 11, 23)), String(
             "Rendez-vous avec l'ostéopathe...",
-            "Appointment with the osteopath...")),
-        Event(String("<div style='text-align:center'>2024</div>",""), String("","")),
+            "Appointment with the osteopath..."), String(
+            "",
+            "")),
+            
+        Event(String("<div style='text-align:center'>2024</div>",""), String("",""), String("","")),
+        
         Event(MonthDate(datetime(
             2024, 12, 18)), String(
-            "Rendez-vous avec un 2e acupuncteur. Ça règle un autre 80% de ma perte de sensibilité.",
-            "Appointment with a second acupuncturist. That fixes another 80% of my loss of sensitivity.")),
+            "Rendez-vous avec un 2e acupuncteur.",
+            "Appointment with a second acupuncturist."), String(
+            "Ça règle un autre 80% de ma perte de sensibilité.",
+            "That fixes another 80% of my loss of sensitivity.")),
         #Event(MonthDate(datetime(
         #    2024, 1, 8)), String(
         #    "Suivi acupuncteur",
@@ -128,33 +171,45 @@ def main():
         #    "Acupuncturist follow-up")),
         Event(MonthDate(datetime(
             2024, 2, 2)), String(
-            "J'ai eu une révélation : le gluten. C'était difficile à trouver, parce qu'il y avait des traces dans la mayonnaise, l'avoine, etc.",
-            "I had an epiphany : gluten. It was hard because I had traces in the mayonnaise, the oats, etc.")),
+            "J'ai eu une révélation : le gluten.",
+            "I had an epiphany : gluten. "), String(
+            "C'était difficile à trouver, parce qu'il y avait des traces dans la mayonnaise, l'avoine, etc.",
+            "It was hard because I had traces in the mayonnaise, the oats, etc.")),
         #Event(MonthDate(datetime(
         #    2024, 2, 26)), String(
         #    "Suivi acupuncteur",
         #    "Acupuncturist follow-up")),
         Event(MonthDate(datetime(
             2024, 4, 4)), String(
-            "Rendez-vous avec un 3e médecin: Coeliaque? Ils veulent que je fasse un gluten challenge pour tester (ça fait des mois que j'ai arrêté le gluten)", 
-            "Appointment with a 3rd doctor: Celiac? They want me to do a gluten challenge to test (it's been months since I stopped eating gluten)")),
+            "Rendez-vous avec un 3e médecin: Coeliaque?", 
+            "Appointment with a 3rd doctor: Celiac?"), String(
+            "Ils veulent que je fasse un gluten challenge pour tester (ça fait des mois que j'ai arrêté le gluten)",
+            "They want me to do a gluten challenge to test (it's been months since I stopped eating gluten)")),
         Event(MonthDate(datetime(
             2024, 6, 4)), String(
-            "DÉFI GLUTEN: Tout revient, je me sens très mal, et le médecin ne me recontacte pas, la secrétaire m'appelle pour dire que c'est négatif ... après 2 semaines, et plusieurs mois sans en prendre avant, pas demandé mes symptômes ni rien...",
-            "GLUTEN CHALLENGE: Everything comes back, I feel very bad, and the doctor doesn't contact me again, the secretary calls me to say that it's negative... after 2 weeks, and several months without taking it before, not asking about my symptoms or anything...")),
+            "DÉFI GLUTEN: Tous les symptômes reviennent.",
+            "GLUTEN CHALLENGE: All symptoms come back."), String(
+            "Je me sens très mal, et le médecin ne me recontacte pas, la secrétaire m'appelle pour dire que c'est négatif ... après 2 semaines, et plusieurs mois sans en prendre avant, pas demandé mes symptômes ni rien...",
+            "I feel very bad, and the doctor doesn't contact me again, the secretary calls me to say that it's negative... after 2 weeks, and several months without taking it before, not asking about my symptoms or anything...")),
         Event(MonthDate(datetime(
             2024, 9, 2)), String(
-            "Première grosse réaction depuis longtemps: J'ai reçu une goutte de bouillon (gluten) dans le visage/yeux. Pas besoin d'en manger...",
-            "First major reaction in a long time: I got a drop of broth (gluten) in my face/eyes. No need to eat it...")),
+            "Première grosse réaction depuis longtemps",
+            "First major reaction in a long time"), String(
+            "J'ai reçu une goutte de bouillon (gluten) dans le visage/yeux. Pas besoin d'en manger...",
+            "I got a drop of broth (gluten) in my face/eyes. No need to eat it...")),
         #Event(MonthDate(datetime(
         #    2024, 9, 24)), String(
         #    "Rendez-vous avec l'ostéopathe pour prévention.",
         #    "Appointment with the osteopath for prevention.")),
-        Event(String("<div style='text-align:center'>2025</div>",""), String("","")),
+
+        Event(String("<div style='text-align:center'>2025</div>",""), String("",""), String("","")),
+        
         Event(MonthDate(datetime(
             2025, 5, 31)), String(
-            "J'étais pratiquement sans symptômes pendant plus qu'un an, mais ça revient... 'Pression' et respiration difficile après avoir mangé une pizza sans gluten. (Et ça continue pour d'autres aliments, de plus en plus)",
-            "I was virtually symptom-free for over a year, but it's back... 'Pressure' and difficulty breathing after eating gluten-free pizza. (And it continues for other foods, more and more)")),
+            "J'étais pratiquement sans symptômes pendant plus qu'un an, mais ça revient...",
+            "I was virtually symptom-free for over a year, but it's back..."), String(
+            "'Pression' et respiration difficile après avoir mangé une pizza sans gluten. (Et ça continue pour d'autres aliments, de plus en plus)",
+            "'Pressure' and difficulty breathing after eating gluten-free pizza. (And it continues for other foods, more and more)")),
         #Event(MonthDate(datetime(
         #    2025, 7, 7)), String(
         #    "Rendez-vous avec un 3e ostéopathe (le 2e est en vacances) pour un mal de dos",
@@ -165,13 +220,71 @@ def main():
         #    "Follow-up with the osteopath")), 
         Event(MonthDate(datetime(
             2025, 7, 12)), String(
-            "Je retourne de 3 nuits en camping: ça revient les symptômes ...",
-            "I'm back from 3 nights camping: the symptoms are back...")),
+            "Ça revient les symptômes ...",
+            "The symptoms are back..."), String(
+            "(Je reviens de 3 nuits en camping)",
+            "(I'm back from 3 nights camping)")),
         Event(MonthDate(datetime(
             2025, 7, 19)), String(
-            "Après 3 nuits à la maison, je retourne 4 autres nuits à l'extérieur. Ok ce n'est pas une coïncidence, je réagis à ma maison aussi (en arrivant), pas juste la bouffe. Et c'est pire que le dernier retour.",
-            "After 3 nights at home, I'm 4 more nights away. Okay, it's not a coincidence, I'm reacting to my home too (when I arrived), not just the food. And it's worse than the last time I came back.")),
+            "Après 3 nuits à la maison, je retourne 4 autres nuits à l'extérieur.",
+            "After 3 nights at home, I'm 4 more nights away."), String(
+            "Ok ce n'est pas une coïncidence, je réagis à ma maison aussi (en arrivant), pas juste la bouffe. Et c'est pire que le dernier retour.",
+            "Okay, it's not a coincidence, I'm reacting to my home too (when I arrived), not just the food. And it's worse than the last time I came back.")),
             
+        ]
+       
+    may_2025 = datetime(2025, 5, 15)
+    months_since_may_2025 = (datetime.now().year - may_2025.year) * 12 + (datetime.now().month - may_2025.month)
+    key_events = [
+        Event(String(
+            "(6 mois) Décembre 2022 - Juin 2023",
+            "(6 months)December 2022 - June 2023"), String(
+            "Début de symptômes neurologiques sévères, coïncidant avec un dégât d'eau", 
+            "Onset of severe neurological symptoms, coinciding with water damage"), String(
+            "Escalade des symptômes jusqu'à leur pic de sévérité. Multiples consultations médicales et tests (Sang, EMG, IRM) sans résultats concluants.",
+            "Escalation of symptoms until their peak severity. Multiple medical consultations and tests (Blood tests, EMG, MRI) without conclusive results.")),
+        Event(String(
+            "(8 mois) Juin 2023 - Février 2024",
+            "(8 months) June 2023 - February 2024"), String(
+            "Suivi Nutritionniste.",
+            "Nutritionist."), String(
+            "Diète d'élimination avec diminution notable des symptômes (~50%). L'alimentation joue un grand rôle. Probablement inflammatoire.",
+            "Elimination diet with significant reduction in symptoms (~50%). Diet plays a big role. Probably inflammatory.")),
+        Event(String(
+            "Juillet 2023",
+            "July 2023"), String(
+            "Traitement ostéopathique pour un nerf coincé (recommandation d'un neurologue)",
+            "Osteopathic treatment for a pinched nerve (recommended by a neurologist)"), String(
+            "Résout quelques symptômes et réduit d'environ 50% le reste.",
+            "Resolves some symptoms and reduces the rest by about 50%.")),
+        Event(String(
+            "(15 mois) Février 2024 - Mai 2025",
+            "(15 months) February 2024 -  May 2025"), String(
+            "J'ai une révélation : le gluten.",
+            "I had an epiphany : gluten. "), String(
+            "C'était difficile à trouver, parce qu'il y avait des traces dans la mayonnaise, l'avoine, etc. Ça règle pratiquement tout (avec le nerf coincé), jusqu'à ~mai 2025",
+            "It was hard to find, because there were traces in mayonnaise, oats, etc. It fixes almost everything (with the pinched nerve), until ~May 2025")),
+        Event(String(
+            "Juin 2024",
+            "June 2024"), String(
+            "Sous le conseil d'un médecin: DÉFI GLUTEN: Tous les symptômes reviennent.",
+            "Under the advice of a doctor: GLUTEN CHALLENGE: All symptoms come back."), String(
+            "Je me sens très mal, et le médecin ne me recontacte pas, la secrétaire m'appelle pour dire que c'est négatif ... après 2 semaines, et plusieurs mois sans en prendre avant, pas demandé mes symptômes ni rien... Sensibilité au gluten confirmée, je continue d'éviter le gluten.",
+            "I feel very bad, and the doctor doesn't contact me again, the secretary calls me to say that it's negative... after 2 weeks, and several months without taking it before, not asking about my symptoms or anything... Gluten sensitivity confirmed, I continue avoiding gluten.")),
+        Event(String(
+            "Septembre 2024",
+            "September 2024"), String(
+            "Première grosse réaction depuis longtemps",
+            "First major reaction in a long time"), String(
+            "J'ai reçu une goutte de bouillon (gluten) dans le visage/yeux. Pas besoin d'en manger... Ce n'est définitivement pas la maladie coeliaque.",
+            "I got a drop of broth (gluten) in my face/eyes. No need to eat it... It's definitely not celiac disease.")),
+        Event(String(
+            f"({months_since_may_2025} mois) Mai 2025 - Aujourd'hui",
+            f"({months_since_may_2025} months) May 2025 - Now"), String(
+            "J'étais pratiquement sans symptômes pendant plus qu'un an, mais ça revient, graduellemenbt... Malgré un régime 100% sans gluten",
+            "I was virtually symptom-free for over a year, but it's back, gradually... Despite a 100% gluten-free diet"), String(
+            "Après 2 séjours en dehors de la maison, le retour augmente les symptômes, ce n'est pas une coincidence. C'est la maison? De la moisissure?",
+            "After two trips away from home, returning home increases symptoms; this is no coincidence. Is it the house? Mold?")),
         ]
         
         
@@ -187,8 +300,8 @@ def main():
                 "Résolu à 80% après avoir remédié un nerf coincé.",
                 "80% resolved after fixing a pinched nerve."),
             notes=String(
-                "Parfois locallisé. Quelques périodes le corps au complet (à partir d'avril 2023). Je ne sens pas un poil épilé, un nez qui saigne, mon pied par terre, Cogner sur une porte... Je sens rien. J'ai essayé sur de la brique. Rien. etc.",
-                "Sometimes localized. Sometimes the whole body (starting April 2023). I don't feel a plucked hair, a bleeding nose, my foot on the ground, Knocking on a door... I don't feel anything. I tried it on brick. Nothing. etc.")
+                "Parfois locallisé. Quelques périodes le corps au complet (à partir d'avril 2023). Je ne sens pas un poil épilé, un nez qui saigne, mon pied par terre. Cogner sur une porte... Je sens rien. J'ai essayé sur de la brique. Rien. etc.",
+                "Sometimes localized. Sometimes the whole body (starting April 2023). I don't feel a plucked hair, a bleeding nose, my foot on the ground. Knocking on a door... I don't feel anything. I tried it on brick. Nothing. etc.")
             ),
                 
         Symptom(name=String(
@@ -283,8 +396,8 @@ def main():
                 "Résolu à 100% après nerf décoincé",
                 "100% resolved after nerve unpinched"),
             notes=String(
-                "",
-                "")
+                "Résolu à 100% après nerf décoincé",
+                "100% resolved after nerve unpinched")
             ),
                 
         Symptom(name=String(
@@ -320,8 +433,8 @@ def main():
             current_status=String(
                 "Idem", ""),
             notes=String(
-                "",
-                "")
+                "C'est arrivé seulement une ou 2 fois.",
+                "It only happened once or twice.")
             ),
                 
         Symptom(name=String(
@@ -332,8 +445,8 @@ def main():
             current_status=String(
                 "Idem", ""),
             notes=String(
-                "",
-                "")
+                "Idem.",
+                "Idem.")
             ),
                 
         Symptom(name=String(
@@ -421,6 +534,18 @@ def main():
             ),
 
         Symptom(name=String(
+                "Difficulté à se concentrer / apprendre",
+                "Difficulty concentrating / learning"),
+            start_date=Date(datetime(
+                2023, 5, 8)),
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent. Ça n'arrivait pas avant.",
+                "I noticed it late, but looking back, it happened often. It didn't happen before.")
+            ),
+
+        Symptom(name=String(
                 "Insomnie",
                 "Insomnia"),
             start_date=Date(datetime(
@@ -455,6 +580,18 @@ def main():
                 "",
                 "")
             ),
+
+        Symptom(name=String(
+                "Nez bloqué",
+                "Blocked nose"),
+            start_date=Date(datetime(
+                2024, 6, 4)),
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent, surtout la nuit, sans avoir de rhume. Ça n'arrivait pas avant.",
+                "I noticed it late, but looking back, it happened often, especially at night, without having a cold. It didn't happen before.")
+            ),
         ]
     
     print("PDF generation start")
@@ -462,6 +599,7 @@ def main():
         summary_text=summary_text,
         symptoms=symptoms,
         key_events=key_events,
+        notable_events=notable_events,
         output_pdf='output/rapport.pdf',
         language="fr", 
         orientation='Portrait')#'Landscape')
