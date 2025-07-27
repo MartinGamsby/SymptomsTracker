@@ -208,11 +208,16 @@
 
         <section>
             <h2>Detailed Symptom Table ({{symptoms|length}}) - Chronological</h2>
+            <p>{{ symptoms_summary_text.en }}</p>
             <table class="symptoms-table">
                 <thead>
                     <tr>
                         <th>Symptom</th>
                         <th>First time noticed</th>
+                        <th>Better after pinched nerve</th>
+                        <th>Wave 1</th>
+                        <th>Wave 2</th>
+                        <th>Wave 3</th>
                         <th>Notes</th>
                     </tr>
                 </thead>
@@ -221,6 +226,10 @@
                     <tr>
                         <td>{{ symptom.name.en }}</td>
                         <td>{{ symptom.start_date.en }}</td>
+                        <td style='text-align: center'>{{ '✓' if symptom.nerve else '' }}</td>
+                        <td style='text-align: center'>{{ '✓' if symptom.wave1 else '' }}</td>
+                        <td style='text-align: center'>{{ '✓' if symptom.wave2 else '' }}</td>
+                        <td style='text-align: center'>{{ '✓' if symptom.wave3 else '' }}</td>
                         <td>{{ symptom.notes.en }}</td>
                     </tr>
                     {% endfor %}

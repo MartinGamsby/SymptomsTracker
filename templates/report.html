@@ -210,11 +210,16 @@
 
         <section>
             <h2>Tableau Détaillé des Symptômes ({{symptoms|length}}) - Chronologique</h2>
+            <p>{{ symptoms_summary_text.fr }}</p>
             <table class="symptoms-table">
                 <thead>
                     <tr>
                         <th>Symptôme</th>
                         <th>Première fois remarqué</th>
+                        <th>Mieux après nerf coincé</th>
+                        <th>Vague 1</th>
+                        <th>Vague 2</th>
+                        <th>Vague 3</th>
                         <th>Remarques</th>
                     </tr>
                 </thead>
@@ -223,6 +228,10 @@
                     <tr>
                         <td>{{ symptom.name.fr }}</td>
                         <td>{{ symptom.start_date.fr }}</td>
+                        <td style='text-align: center'>{{ '✓' if symptom.nerve else '' }}</td>
+                        <td style='text-align: center'>{{ '✓' if symptom.wave1 else '' }}</td>
+                        <td style='text-align: center'>{{ '✓' if symptom.wave2 else '' }}</td>
+                        <td style='text-align: center'>{{ '✓' if symptom.wave3 else '' }}</td>
                         <td>{{ symptom.notes.fr }}</td>
                     </tr>
                     {% endfor %}

@@ -63,6 +63,11 @@ class Symptom:
     current_status: String
     notes: String
     
+    nerve: bool
+    wave1: bool
+    wave2: bool
+    wave3: bool
+    
     @property
     def subtotal_dollar(self):
         return f'${self.subtotal:.2f}'

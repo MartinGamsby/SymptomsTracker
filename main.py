@@ -189,8 +189,8 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             2024, 6, 4)), String(
             "DÉFI GLUTEN: Tous les symptômes reviennent.",
             "GLUTEN CHALLENGE: All symptoms come back."), String(
-            "Je me sens très mal, et le médecin ne me recontacte pas, la secrétaire m'appelle pour dire que c'est négatif ... après 2 semaines, et plusieurs mois sans en prendre avant, pas demandé mes symptômes ni rien...",
-            "I feel very bad, and the doctor doesn't contact me again, the secretary calls me to say that it's negative... after 2 weeks, and several months without taking it before, not asking about my symptoms or anything...")),
+            "Je me sens très mal, la secrétaire m'appelle pour dire que c'est négatif, sans suivi.",
+            "I feel very bad, the secretary calls me to say that it's negative, without any follow-up.")),
         Event(MonthDate(datetime(
             2024, 9, 2)), String(
             "Première grosse réaction depuis longtemps",
@@ -296,6 +296,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Numbness"),
             start_date=Date(datetime(
                 2022, 12, 21)),
+            nerve=False,wave1=False,wave2=True,wave3=False,
             current_status=String(
                 "Résolu à 80% après avoir remédié un nerf coincé.",
                 "80% resolved after fixing a pinched nerve."),
@@ -309,6 +310,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Heart Palpitations"),
             start_date=Date(datetime(
                 2022, 12, 25)),
+            nerve=False,wave1=True,wave2=True,wave3=False,
             current_status=String(
                 "Était résolu sans gluten, mais revient tranquillement.",
                 "Was resolved gluten-free, but is slowly coming back."),
@@ -322,6 +324,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Clumsy"),
             start_date=Date(datetime(
                 2022, 12, 26)),
+            nerve=True,wave1=False,wave2=True,wave3=False,
             current_status=String(
                 "Résolu à 80% après nerf décoincé",
                 "80% resolved after nerve unpinched"),
@@ -335,6 +338,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Muscle weakness"),
             start_date=Date(datetime(
                 2023, 1, 13)),
+            nerve=True,wave1=False,wave2=False,wave3=False,
             #triggers=String(
             #    "Finalement trouvé que c'était dû à un nerf coincé",
             #    "Found to be caused by a pinched nerve"),
@@ -351,6 +355,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "General weakness"),
             start_date=Date(datetime(
                 2023, 2, 4)),
+            nerve=False,wave1=True,wave2=True,wave3=False,
             current_status=String(
                 "Résolu à 50% après nerf décoincé",
                 "50% resolved after nerve unpinched"),
@@ -363,6 +368,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Fatigue", ""),
             start_date=Date(datetime(
                 2023, 2, 9)),
+            nerve=True,wave1=True,wave2=True,wave3=False,
             current_status=String(
                 "Résolu à 80% après nerf décoincé. Un autre 80% après l'acupunture.",
                 "80% resolved after nerve unpinched. Another 80% after acupuncture."),
@@ -376,6 +382,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Dizziness / Loss of balance"),
             start_date=Date(datetime(
                 2023, 2, 13)),
+            nerve=False,wave1=True,wave2=True,wave3=False,
             current_status=String(
                 "Était résolu sans gluten, mais revient tranquillement.",
                 "Was resolved gluten-free, but is slowly coming back."),
@@ -389,6 +396,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Tremors"),
             start_date=Date(datetime(
                 2023, 2, 14)),
+            nerve=True,wave1=False,wave2=False,wave3=False,
             #triggers=String(
             #    "Finalement trouvé que c'était dû à un nerf coincé",
             #    "Found to be caused by a pinched nerve"),
@@ -405,6 +413,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Difficulty breathing / Rapid shortness of breath"),
             start_date=Date(datetime(
                 2023, 2, 15)),
+            nerve=False,wave1=True,wave2=True,wave3=False,
             current_status=String(
                 "Était résolu sans gluten, mais revient tranquillement.",
                 "Was resolved gluten-free, but is slowly coming back."),
@@ -418,6 +427,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "'Pressure' in throat, temples, ears"),
             start_date=Date(datetime(
                 2023, 3, 1)),
+            nerve=False,wave1=True,wave2=False,wave3=False,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -430,6 +440,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "'Always Thirsty' (sometimes)"),
             start_date=Date(datetime(
                 2023, 3, 6)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -442,6 +453,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Frequent urge to go to the toilet"),
             start_date=Date(datetime(
                 2023, 3, 6)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -454,6 +466,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Headache"),
             start_date=Date(datetime(
                 2023, 3, 6)),
+            nerve=False,wave1=False,wave2=False,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -466,6 +479,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Body aches"),
             start_date=Date(datetime(
                 2023, 3, 28)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -478,6 +492,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Loss of urge to go to the toilet"),
             start_date=Date(datetime(
                 2023, 4, 17)),
+            nerve=False,wave1=False,wave2=True,wave3=False,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -490,6 +505,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Loss of sensation of hot/cold"),
             start_date=Date(datetime(
                 2023, 4, 17)),
+            nerve=False,wave1=False,wave2=True,wave3=False,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -502,6 +518,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Irritability"),
             start_date=Date(datetime(
                 2023, 4, 19)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -514,6 +531,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Loss of thirst/hunger sensation"),
             start_date=Date(datetime(
                 2023, 4, 25)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -526,6 +544,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Unusual pain"),
             start_date=Date(datetime(
                 2023, 4, 26)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -538,6 +557,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Difficulty concentrating / learning"),
             start_date=Date(datetime(
                 2023, 5, 8)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -550,6 +570,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Insomnia"),
             start_date=Date(datetime(
                 2023, 5, 30)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -562,6 +583,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Stomach ache"),
             start_date=Date(datetime(
                 2023, 6, 3)),
+            nerve=False,wave1=True,wave2=True,wave3=False,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -574,6 +596,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Nausea"),
             start_date=Date(datetime(
                 2023, 7, 2)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -586,6 +609,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Blocked nose"),
             start_date=Date(datetime(
                 2024, 6, 4)),
+            nerve=False,wave1=False,wave2=True,wave3=False,
             current_status=String(
                 "Idem", ""),
             notes=String(
@@ -593,10 +617,28 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "I noticed it late, but looking back, it happened often, especially at night, without having a cold. It didn't happen before.")
             ),
         ]
+        
+    symptoms_summary_text = String(
+            """Les symptômes ne se déclenchent pas tous au même moment. J'ai noté trois vagues: <ol><li>
+<strong>Minutes:</strong> pression, difficultés respiratoires, etc.
+</li><li>
+<strong>Jours:</strong> engourdissements, vertiges, fatigue, etc.
+</li><li>
+<strong>Post-inflammatoire:</strong> maux de tête, nausées, etc.
+</li></ol>""",
+            """The symptoms are not all triggered at the same time, I noticed 3 waves:<ol><li>
+<strong>Minutes:</strong> pressure, breathing issues, etc.
+</li><li>
+<strong>Days:</strong> numbness, vertigo, fatigue, etc.
+</li><li>
+<strong>Post-inflammatory:</strong> headache, nausea, etc.
+</li></ol>"""
+        )
     
     print("FR PDF generation start")
     generate_pdf(patient_name="Martin Gamsby",
         summary_text=summary_text,
+        symptoms_summary_text=symptoms_summary_text,
         symptoms=symptoms,
         key_events=key_events,
         notable_events=notable_events,
@@ -607,6 +649,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
     print("EN PDF generation start")
     generate_pdf(patient_name="Martin Gamsby",
         summary_text=summary_text,
+        symptoms_summary_text=symptoms_summary_text,
         symptoms=symptoms,
         key_events=key_events,
         notable_events=notable_events,
