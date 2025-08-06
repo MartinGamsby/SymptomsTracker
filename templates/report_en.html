@@ -106,7 +106,7 @@
 
         .symptoms-table th, .symptoms-table td {
             border: 1px solid #e5e7eb;
-            padding: 9px;
+            padding: 3px;
             text-align: left;
             font-size: 14px;
         }
@@ -184,7 +184,6 @@
         </header>
 
         <section>
-            <h2>Summary of the Situation</h2>
             <p>
                 {{ summary_text.en }}
             </p>
@@ -202,6 +201,16 @@
                 {% for event in key_events %}
                 <li><strong>{{ event.date.en }}:</strong> {{ event.description.en }}</li>
                 <li class="subtitle">{{ event.details.en }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        
+        <section class="timeline">
+            <h2>Tests</h2>
+            <ul>
+                {% for test in tests %}
+                <li><strong>{{ test.date.en }}:</strong> {{ test.description.en }}</li>
+                <li class="subtitle">{{ test.results.en }}</li>
                 {% endfor %}
             </ul>
         </section>

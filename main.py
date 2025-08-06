@@ -3,7 +3,7 @@ import subprocess
 from datetime import datetime
 
 from report import generate_pdf
-from data import Symptom, Event, String, Date, MonthDate
+from data import Symptom, Event, String, Date, MonthDate, TestResults
 
 def run_cmd(arg):
     args = arg.split()
@@ -189,8 +189,8 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             2024, 6, 4)), String(
             "DÉFI GLUTEN: Tous les symptômes reviennent.",
             "GLUTEN CHALLENGE: All symptoms come back."), String(
-            "Je me sens très mal, la secrétaire m'appelle pour dire que c'est négatif, sans suivi.",
-            "I feel very bad, the secretary calls me to say that it's negative, without any follow-up.")),
+            "Je me sens très mal, et le médecin ne me recontacte pas, la secrétaire m'appelle pour dire que c'est négatif ... après 2 semaines, et plusieurs mois sans en prendre avant, pas demandé mes symptômes ni rien... Sensibilité au gluten confirmée, je continue d'éviter le gluten.",
+            "I feel very bad, and the doctor doesn't contact me again, the secretary calls me to say that it's negative... after 2 weeks, and several months without taking it before, not asking about my symptoms or anything... Gluten sensitivity confirmed, I continue avoiding gluten.")),
         Event(MonthDate(datetime(
             2024, 9, 2)), String(
             "Première grosse réaction depuis longtemps",
@@ -269,8 +269,8 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             "&emsp;[June 2024]"), String(
             "Sous le conseil d'un médecin: DÉFI GLUTEN: Tous les symptômes reviennent.",
             "Under the advice of a doctor: GLUTEN CHALLENGE: All symptoms come back."), String(
-            "Je me sens très mal, et le médecin ne me recontacte pas, la secrétaire m'appelle pour dire que c'est négatif ... après 2 semaines, et plusieurs mois sans en prendre avant, pas demandé mes symptômes ni rien... Sensibilité au gluten confirmée, je continue d'éviter le gluten.",
-            "I feel very bad, and the doctor doesn't contact me again, the secretary calls me to say that it's negative... after 2 weeks, and several months without taking it before, not asking about my symptoms or anything... Gluten sensitivity confirmed, I continue avoiding gluten.")),
+            "Je me sens très mal, la secrétaire m'appelle pour dire que c'est négatif, sans suivi.",
+            "I feel very bad, the secretary calls me to say that it's negative, without any follow-up.")),
         Event(String(
             "&emsp;[Septembre 2024]",
             "&emsp;[September 2024]"), String(
@@ -286,7 +286,74 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             "Après 2 séjours en dehors de la maison, le retour augmente les symptômes, ce n'est pas une coincidence. C'est la maison? De la moisissure?",
             "After two trips away from home, returning home increases symptoms; this is no coincidence. Is it the house? Mold?")),
         ]
-        
+    
+    tests =  [
+        TestResults(MonthDate(datetime(
+            2022, 7, 28)), String(
+            "Covid-19", 
+            "Covid-19"), String(
+            "positif (j'ai eu des symptômes intenses, mais seulement quelques jours)",
+            "positive (had intense symptoms, but only a few days)")),
+            
+        TestResults(MonthDate(datetime(
+            2023, 2, 28)), String(
+            "Tests sanguins: (crea) Créatinine, (k) Potassium, (na) Sodium, (alb) Albumine, (ca) Calcium, (ferri) Ferritine, (thyr) Bilan thyroïdien, (hba1c) hémoglobine glyquée, (fsc) Forumle sanguine, CRP, Vitamine B12, Magnésium", 
+            "Blood tests: Creatinine, Potassium, Sodium, Albumin, Calcium, Ferritin, Thyroid panel, Glycated hemoglobin, Complete blood count, CRP, Vitamin B12, Magnesium"), String(
+            "ok, Vitamines B12 dans la normale, mais bas",
+            "ok, Vitamin B12 is within normal, but low.")),
+
+        TestResults(MonthDate(datetime(
+            2023, 3, 27)), String(
+            "EMG", 
+            "EMG"), String(
+            "ok, neurologue dit que ça peut être un nerf coincé.",
+            "ok, neurologist says it could be a pinched nerve.")),
+ 
+        TestResults(MonthDate(datetime(
+            2023, 6, 1)), String(
+            "IRM (avec contraste)",
+            "MRI (with gadolinium contrast)"), String(
+            "ok, seulement télangiectasie? 6mm?",
+            "ok, just a telangiectasia? 6mm?")),
+
+        TestResults(MonthDate(datetime(
+            2024, 6, 4)), String(
+            "Tests sanguins: Glucose aléatoire non à jeun, TSH, Ferritine, B12, Créatinine, Électronytes (Na, K, Cl), CRP / Protéine C réactive, F.S.C., Ac anti-transglutaminases, IgA totaux, malabsorption, HbA1C.",
+            "Blood tests: Random (non-fasting) glucose, TSH, Ferritin, B12, Creatinine, Electrolytes (Na, K, Cl), CRP / C-reactive protein, CBC (Complete Blood Count), Anti-transglutaminase antibodies, Total IgA, Malabsorption, HbA1C."), String(
+            "ok?",
+            "ok?")),
+            
+        TestResults(MonthDate(datetime(
+            2024, 6, 18)), String(
+            "Test d'urine: Ratio albumine/créatinine urinaire.",
+            "Urine test: albumin/creatinine ratio."), String(
+            "ok?",
+            "ok?")),
+            
+        TestResults(MonthDate(datetime(
+            2024, 7, 25)), String(
+            "Test VCS (Visual Contrast Sensitivity Test): vcstest.com",
+            "VCS test (Visual Contrast Sensitivity Test): vcstest.com"), String(
+            "positif (échec)",
+            "positive (failed)")),
+            
+        TestResults(MonthDate(datetime(
+            2024, 7, 28)), String(
+            "Test VCS: survivingmold.com",
+            "VCS test: survivingmold.com"), String(
+            "positif (échec)",
+            "positive (failed)")),
+            
+        TestResults(MonthDate(datetime(
+            2025, 8, 5)), String(
+            "ERMI",
+            "ERMI test"), String(
+            "pending",
+            "pending")),
+            
+            
+        ]
+
         
 
     symptoms = [
@@ -642,6 +709,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         symptoms=symptoms,
         key_events=key_events,
         notable_events=notable_events,
+        tests=tests,
         output_pdf='output/rapport.pdf',
         language="fr", 
         orientation='Portrait')#'Landscape')
@@ -653,6 +721,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         symptoms=symptoms,
         key_events=key_events,
         notable_events=notable_events,
+        tests=tests,
         output_pdf='output/report.pdf',
         language="en", 
         orientation='Portrait')#'Landscape')

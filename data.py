@@ -56,6 +56,12 @@ class Event:
 
 
 @dataclass
+class TestResults:
+    date: Date
+    description: String
+    results: String
+
+@dataclass
 class Symptom:
     name: String
     start_date: String

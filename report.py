@@ -12,7 +12,7 @@ def run_cmd(self, arg):
     subprocess.run(args)
 
 
-def generate_pdf(patient_name, summary_text, symptoms_summary_text, symptoms, key_events, notable_events, output_pdf, language="fr", orientation='Landscape'):
+def generate_pdf(patient_name, summary_text, symptoms_summary_text, symptoms, key_events, notable_events, tests, output_pdf, language="fr", orientation='Landscape'):
 
     if language == "fr":        
         locale.setlocale(locale.LC_ALL, 'fr_CA.UTF-8')
@@ -29,6 +29,7 @@ def generate_pdf(patient_name, summary_text, symptoms_summary_text, symptoms, ke
                 'symptoms_summary_text': symptoms_summary_text,
                 'key_events': key_events,
                 'notable_events': notable_events,
+                'tests': tests,
                 'symptoms': symptoms
               }
 
