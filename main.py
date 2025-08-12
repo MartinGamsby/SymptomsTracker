@@ -285,7 +285,21 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             "I was virtually symptom-free for over a year, but it's back, gradually... Despite a 100% gluten-free diet"), String(
             "Après 2 séjours en dehors de la maison, le retour augmente les symptômes, ce n'est pas une coincidence. C'est la maison? De la moisissure?",
             "After two trips away from home, returning home increases symptoms; this is no coincidence. Is it the house? Mold?")),
+        Event(String(
+            "&emsp;[Août 2024]",
+            "&emsp;[August 2024]"), String(
+            "Amélioration notable des symptômes matinaux depuis l'installation du purificateur d'air HEPA iAdaptAir 2.0 — moins de raideur/faiblesse/fatigue matinale.",
+            "Notable improvement in morning symptoms since installing iAdaptAir 2.0 HEPA air purifier — less morning stiffness/weakness/fatigue."), String(
+            "",
+            "")),
+            
         ]
+        
+    ermi_test_1 = "Aspergillus sydowii, Aspergillus versicolor, Cladosporium sphaerospermum, Penicillium brevicompactum, Penicillium crustosum, Cladosporium cladosporioides2, Mucor amphibiorum, Penicillium chrysogenum, Rhizopus stolonifer"
+    ermi_test_1_other_q3s = "Wallemia sebi, Alternaria alternata, Epicoccum nigrum"
+    ermi_test_1_q2s = "Aspergillus niger, Aspergillus ochraceus, Aspergillus penicillioides, Aspergillus restrictus, Chaetomium globosum, Paecilomyces variotii, Penicillium corylophilum, Stachybotrys chartarum, Cladosporium herbarum"
+    ermi_test_1_q1s = "Aspergillus flavus/oryzae, Aspergillus fumigatus, Aureobasidium pullulans, Eurotium (Asp.) amstelodami, Penicillium purpurogenum, Penicillium variabile, Scopulariopsis chartarum, Trichoderma viride, Acremonium strictum, Cladosporium cladosporioides1"
+    ermi_test_1_none = "Aspergillus sclerotiorum, Aspergillus unguis, Penicillium Spinulosum, Scopulariopsis brevicaulis/fusca, Aspergillus ustus"
     
     tests =  [
         TestResults(MonthDate(datetime(
@@ -345,11 +359,17 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             "positive (failed)")),
             
         TestResults(MonthDate(datetime(
-            2025, 8, 5)), String(
-            "ERMI",
-            "ERMI test"), String(
-            "pending",
-            "pending")),
+            2025, 7, 23)), String(
+            "ERMI: 10.4",
+            "ERMI test: 10.4"), String(
+            f"G1: 29.1, G2: 18.7. Étoilé : {ermi_test_1} (Plus de dix fois la moyenne de la moisissure)",
+            f"G1: 29.1, G2: 18.7. Starred: {ermi_test_1} (Higher than ten fold of the mean)")),
+        TestResults(MonthDate(datetime(
+            2025, 7, 23)), String(
+            "HERTSMI-2: 18",
+            "HERTSMI-2 test: 18"), String(
+            "(\"Il est déconseillé de réoccuper les lieux tant que des travaux de remédiation et une réévaluation ne seront pas concluants.\")",
+            "(\"Re-occupancy is ill-advised until further remediation and re-assessment are conclusive.\")")),
             
             
         ]
