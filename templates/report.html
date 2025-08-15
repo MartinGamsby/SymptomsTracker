@@ -22,7 +22,7 @@
             margin: 20px auto;
             /*padding: 30px;
             background-color: #ffffff;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-radius: 8px;*/
         }
@@ -37,7 +37,7 @@
 
         h1 {
             font-size: 24px;
-            border-bottom: 2px solid #e5e7eb;
+            border-bottom: 2px solid #95979b;
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
@@ -67,7 +67,7 @@
 
         .subtitle {
             font-size: 15px;
-            color: #6b7280;
+            color: #5b6270;
             margin-left: 30px;
         }
 
@@ -79,7 +79,7 @@
             background-color: #f9fafb;
             padding: 10px;
             border-radius: 6px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
         }
 
         /* --- Chronologie des événements --- */
@@ -105,7 +105,7 @@
         }
 
         .symptoms-table th, .symptoms-table td {
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
             padding: 3px;
             text-align: left;
             font-size: 14px;
@@ -133,7 +133,7 @@
         .chart-container img {
             max-width: 97%;
             height: auto;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
             border-radius: 6px;
             padding: 10px;
         }
@@ -170,6 +170,8 @@
                 text-decoration: none;
                 color: #000;
             }
+            
+            .page, .page-break { break-after: page; page-break-after: always;}
         }
     </style>
 </head>
@@ -209,16 +211,28 @@
         
         <section class="timeline">
             <h2>Tests</h2>
-            <ul>
+            <table class="symptoms-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Test</th>
+                        <th>Results</th>
+                    </tr>
+                </thead>
+                <tbody>
                 {% for test in tests %}
-                <li><strong>{{ test.date.fr }}:</strong> {{ test.description.fr }}</li>
-                <li class="subtitle">{{ test.results.fr }}</li>
-                {% endfor %}
-            </ul>
+                    <tr>
+                        <td>{{ test.date.fr }}</td>
+                        <td>{{ test.description.fr }}</td>
+                        <td>{{ test.results.fr }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </section>
 
         <section>
-            <h2>Tableau Détaillé des Symptômes ({{symptoms|length}}) - Chronologique</h2>
+            <h2 class="page-break">Tableau Détaillé des Symptômes ({{symptoms|length}}) - Chronologique</h2>
             <p>{{ symptoms_summary_text.fr }}</p>
             <table class="symptoms-table">
                 <thead>

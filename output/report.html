@@ -22,7 +22,7 @@
             margin: 20px auto;
             /*padding: 30px;
             background-color: #ffffff;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-radius: 8px;*/
         }
@@ -37,7 +37,7 @@
 
         h1 {
             font-size: 24px;
-            border-bottom: 2px solid #e5e7eb;
+            border-bottom: 2px solid #95979b;
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
@@ -79,7 +79,7 @@
             background-color: #f9fafb;
             padding: 10px;
             border-radius: 6px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
         }
 
         /* --- Chronologie des événements --- */
@@ -105,7 +105,7 @@
         }
 
         .symptoms-table th, .symptoms-table td {
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
             padding: 3px;
             text-align: left;
             font-size: 14px;
@@ -133,7 +133,7 @@
         .chart-container img {
             max-width: 97%;
             height: auto;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
             border-radius: 6px;
             padding: 10px;
         }
@@ -157,29 +157,23 @@
                 padding: 0;
                 max-width: 100%;
             }
-
-            h1, h2 {
-                page-break-after: avoid;
-            }
-            
-            .symptoms-table, .timeline {
-                page-break-inside: avoid;
-            }
             
             a {
                 text-decoration: none;
                 color: #000;
             }
+            
+            .page, .page-break { page-break-inside: always!important;}
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container page-break">
         <header class="header">
             <h1>Medical Report and Chronology of Symptoms - Martin Gamsby</h1>
             <div class="patient-info">
-                <span><strong>Report creation date :</strong> August 12 2025</span>
+                <span><strong>Report creation date :</strong> August 13 2025</span>
             </div>
         </header>
 
@@ -231,43 +225,84 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         
         <section class="timeline">
             <h2>Tests</h2>
-            <ul>
+            <table class="symptoms-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Test</th>
+                        <th>Results</th>
+                    </tr>
+                </thead>
+                <tbody>
                 
-                <li><strong>Jul 2022:</strong> Covid-19</li>
-                <li class="subtitle">positive (had intense symptoms, but only a few days)</li>
-                
-                <li><strong>Feb 2023:</strong> Blood tests: Creatinine, Potassium, Sodium, Albumin, Calcium, Ferritin, Thyroid panel, Glycated hemoglobin, Complete blood count, CRP, Vitamin B12, Magnesium</li>
-                <li class="subtitle">ok, Vitamin B12 is within normal, but low.</li>
-                
-                <li><strong>Mar 2023:</strong> EMG</li>
-                <li class="subtitle">ok, neurologist says it could be a pinched nerve.</li>
-                
-                <li><strong>Jun 2023:</strong> MRI (with gadolinium contrast)</li>
-                <li class="subtitle">ok, just a telangiectasia? 6mm?</li>
-                
-                <li><strong>Jun 2024:</strong> Blood tests: Random (non-fasting) glucose, TSH, Ferritin, B12, Creatinine, Electrolytes (Na, K, Cl), CRP / C-reactive protein, CBC (Complete Blood Count), Anti-transglutaminase antibodies, Total IgA, Malabsorption, HbA1C.</li>
-                <li class="subtitle">ok?</li>
-                
-                <li><strong>Jun 2024:</strong> Urine test: albumin/creatinine ratio.</li>
-                <li class="subtitle">ok?</li>
-                
-                <li><strong>Jul 2024:</strong> VCS test (Visual Contrast Sensitivity Test): vcstest.com</li>
-                <li class="subtitle">positive (failed)</li>
-                
-                <li><strong>Jul 2024:</strong> VCS test: survivingmold.com</li>
-                <li class="subtitle">positive (failed)</li>
-                
-                <li><strong>Jul 2025:</strong> ERMI test: 10.4</li>
-                <li class="subtitle">G1: 29.1, G2: 18.7. Starred: Aspergillus sydowii, Aspergillus versicolor, Cladosporium sphaerospermum, Penicillium brevicompactum, Penicillium crustosum, Cladosporium cladosporioides2, Mucor amphibiorum, Penicillium chrysogenum, Rhizopus stolonifer (Higher than ten fold of the mean)</li>
-                
-                <li><strong>Jul 2025:</strong> HERTSMI-2 test: 18</li>
-                <li class="subtitle">("Re-occupancy is ill-advised until further remediation and re-assessment are conclusive.")</li>
-                
-            </ul>
+                    <tr>
+                        <td>Jul 2022</td>
+                        <td>Covid-19</td>
+                        <td>positive (had intense symptoms, but only a few days)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Feb 2023</td>
+                        <td>Blood tests</td>
+                        <td>Creatinine, Potassium, Sodium, Albumin, Calcium, Ferritin, Thyroid panel, Glycated hemoglobin, Complete blood count, CRP, Vitamin B12, Magnesium:<br /><strong>ok, Vitamin B12 is within normal, but low.</strong></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Mar 2023</td>
+                        <td>EMG</td>
+                        <td>ok, neurologist says it could be a pinched nerve.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Jun 2023</td>
+                        <td>MRI (with gadolinium contrast)</td>
+                        <td>ok, just a telangiectasia? 6mm?</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Jun 2024</td>
+                        <td>Blood tests</td>
+                        <td>Random (non-fasting) glucose, TSH, Ferritin, B12, Creatinine, Electrolytes (Na, K, Cl), CRP / C-reactive protein, CBC (Complete Blood Count), Anti-transglutaminase antibodies, Total IgA, Malabsorption, HbA1C: ok</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Jun 2024</td>
+                        <td>Urine test: albumin/creatinine ratio.</td>
+                        <td>ok</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Jul 2024</td>
+                        <td>VCS test (Visual Contrast Sensitivity Test): vcstest.com</td>
+                        <td>positive (failed)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Jul 2024</td>
+                        <td>VCS test: survivingmold.com</td>
+                        <td>positive (failed)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Jul 2025</td>
+                        <td>ERMI test: 10.4</td>
+                        <td>G1: 29.1, G2: 18.7. Starred: Aspergillus sydowii, Aspergillus versicolor, Cladosporium sphaerospermum, Penicillium brevicompactum, Penicillium crustosum, Cladosporium cladosporioides2, Mucor amphibiorum, Penicillium chrysogenum, Rhizopus stolonifer (Higher than ten fold of the mean)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Jul 2025</td>
+                        <td>HERTSMI-2 test: 18</td>
+                        <td>"Re-occupancy is ill-advised until further remediation and re-assessment are conclusive."</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
         </section>
 
+    </div>
+    <div class="container page-break">
         <section>
-            <h2>Detailed Symptom Table (24) - Chronological</h2>
+            <h2 class="page">Detailed Symptom Table (24) - Chronological</h2>
             <p>The symptoms are not all triggered at the same time, I noticed 3 waves:<ol><li>
 <strong>Minutes:</strong> pressure, breathing issues, etc.
 </li><li>

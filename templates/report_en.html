@@ -22,7 +22,7 @@
             margin: 20px auto;
             /*padding: 30px;
             background-color: #ffffff;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-radius: 8px;*/
         }
@@ -37,7 +37,7 @@
 
         h1 {
             font-size: 24px;
-            border-bottom: 2px solid #e5e7eb;
+            border-bottom: 2px solid #95979b;
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
@@ -79,7 +79,7 @@
             background-color: #f9fafb;
             padding: 10px;
             border-radius: 6px;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
         }
 
         /* --- Chronologie des événements --- */
@@ -105,7 +105,7 @@
         }
 
         .symptoms-table th, .symptoms-table td {
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
             padding: 3px;
             text-align: left;
             font-size: 14px;
@@ -133,7 +133,7 @@
         .chart-container img {
             max-width: 97%;
             height: auto;
-            border: 1px solid #e5e7eb;
+            border: 1px solid #95979b;
             border-radius: 6px;
             padding: 10px;
         }
@@ -157,25 +157,19 @@
                 padding: 0;
                 max-width: 100%;
             }
-
-            h1, h2 {
-                page-break-after: avoid;
-            }
-            
-            .symptoms-table, .timeline {
-                page-break-inside: avoid;
-            }
             
             a {
                 text-decoration: none;
                 color: #000;
             }
+            
+            .page, .page-break { page-break-inside: always!important;}
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="container page-break">
         <header class="header">
             <h1>Medical Report and Chronology of Symptoms - {{ patient_name }}</h1>
             <div class="patient-info">
@@ -207,16 +201,30 @@
         
         <section class="timeline">
             <h2>Tests</h2>
-            <ul>
+            <table class="symptoms-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Test</th>
+                        <th>Results</th>
+                    </tr>
+                </thead>
+                <tbody>
                 {% for test in tests %}
-                <li><strong>{{ test.date.en }}:</strong> {{ test.description.en }}</li>
-                <li class="subtitle">{{ test.results.en }}</li>
-                {% endfor %}
-            </ul>
+                    <tr>
+                        <td>{{ test.date.en }}</td>
+                        <td>{{ test.description.en }}</td>
+                        <td>{{ test.results.en }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </section>
 
+    </div>
+    <div class="container page-break">
         <section>
-            <h2>Detailed Symptom Table ({{symptoms|length}}) - Chronological</h2>
+            <h2 class="page">Detailed Symptom Table ({{symptoms|length}}) - Chronological</h2>
             <p>{{ symptoms_summary_text.en }}</p>
             <table class="symptoms-table">
                 <thead>

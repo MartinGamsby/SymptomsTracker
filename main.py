@@ -311,10 +311,10 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             
         TestResults(MonthDate(datetime(
             2023, 2, 28)), String(
-            "Tests sanguins: (crea) Créatinine, (k) Potassium, (na) Sodium, (alb) Albumine, (ca) Calcium, (ferri) Ferritine, (thyr) Bilan thyroïdien, (hba1c) hémoglobine glyquée, (fsc) Forumle sanguine, CRP, Vitamine B12, Magnésium", 
-            "Blood tests: Creatinine, Potassium, Sodium, Albumin, Calcium, Ferritin, Thyroid panel, Glycated hemoglobin, Complete blood count, CRP, Vitamin B12, Magnesium"), String(
-            "ok, Vitamines B12 dans la normale, mais bas",
-            "ok, Vitamin B12 is within normal, but low.")),
+            "Tests sanguins", 
+            "Blood tests"), String(
+            "(crea) Créatinine, (k) Potassium, (na) Sodium, (alb) Albumine, (ca) Calcium, (ferri) Ferritine, (thyr) Bilan thyroïdien, (hba1c) hémoglobine glyquée, (fsc) Formule sanguine, CRP, Vitamine B12, Magnésium:<br /><strong>ok, Vitamines B12 dans la normale, mais bas.</strong>",
+            "Creatinine, Potassium, Sodium, Albumin, Calcium, Ferritin, Thyroid panel, Glycated hemoglobin, Complete blood count, CRP, Vitamin B12, Magnesium:<br /><strong>ok, Vitamin B12 is within normal, but low.</strong>")),
 
         TestResults(MonthDate(datetime(
             2023, 3, 27)), String(
@@ -332,17 +332,17 @@ New discovery: symptoms intensify each time returning home after an absence (sus
 
         TestResults(MonthDate(datetime(
             2024, 6, 4)), String(
-            "Tests sanguins: Glucose aléatoire non à jeun, TSH, Ferritine, B12, Créatinine, Électronytes (Na, K, Cl), CRP / Protéine C réactive, F.S.C., Ac anti-transglutaminases, IgA totaux, malabsorption, HbA1C.",
-            "Blood tests: Random (non-fasting) glucose, TSH, Ferritin, B12, Creatinine, Electrolytes (Na, K, Cl), CRP / C-reactive protein, CBC (Complete Blood Count), Anti-transglutaminase antibodies, Total IgA, Malabsorption, HbA1C."), String(
-            "ok?",
-            "ok?")),
+            "Tests sanguins",
+            "Blood tests"), String(
+            "Glucose aléatoire non à jeun, TSH, Ferritine, B12, Créatinine, Électronytes (Na, K, Cl), CRP / Protéine C réactive, F.S.C., Ac anti-transglutaminases, IgA totaux, malabsorption, HbA1C: ok",
+            "Random (non-fasting) glucose, TSH, Ferritin, B12, Creatinine, Electrolytes (Na, K, Cl), CRP / C-reactive protein, CBC (Complete Blood Count), Anti-transglutaminase antibodies, Total IgA, Malabsorption, HbA1C: ok")),
             
         TestResults(MonthDate(datetime(
             2024, 6, 18)), String(
             "Test d'urine: Ratio albumine/créatinine urinaire.",
             "Urine test: albumin/creatinine ratio."), String(
-            "ok?",
-            "ok?")),
+            "ok",
+            "ok")),
             
         TestResults(MonthDate(datetime(
             2024, 7, 25)), String(
@@ -368,8 +368,8 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             2025, 7, 23)), String(
             "HERTSMI-2: 18",
             "HERTSMI-2 test: 18"), String(
-            "(\"Il est déconseillé de réoccuper les lieux tant que des travaux de remédiation et une réévaluation ne seront pas concluants.\")",
-            "(\"Re-occupancy is ill-advised until further remediation and re-assessment are conclusive.\")")),
+            "\"Il est déconseillé de réoccuper les lieux tant que des travaux de remédiation et une réévaluation ne seront pas concluants.\"",
+            "\"Re-occupancy is ill-advised until further remediation and re-assessment are conclusive.\"")),
             
             
         ]
