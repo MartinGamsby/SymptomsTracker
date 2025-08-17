@@ -22,7 +22,7 @@
             margin: 20px auto;
             /*padding: 30px;
             background-color: #ffffff;
-            border: 1px solid #95979b;
+            border: 1px solid #65676b;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-radius: 8px;*/
         }
@@ -37,7 +37,7 @@
 
         h1 {
             font-size: 24px;
-            border-bottom: 2px solid #95979b;
+            border-bottom: 2px solid #85878b;
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
@@ -46,9 +46,12 @@
             font-size: 18px;
             color: #374151;
             margin-top: 30px;
-            border-bottom: 1px solid #f3f4f6;
-            padding-bottom: 8px;
             text-align: center;
+            
+            background-color: #e9eaeb;
+            padding: 6px;            
+            border-radius: 6px;
+            border: 1px solid #85878b;
         }
 
         p {
@@ -67,19 +70,19 @@
 
         .subtitle {
             font-size: 15px;
-            color: #5b6270;
+            color: #6b7280;
             margin-left: 30px;
         }
 
-        .patient-info {
+        .box {
             display: flex;
             justify-content: space-between;
             font-size: 14px;
             color: #4b5563;
-            background-color: #f9fafb;
+            background-color: #e9eaeb;
             padding: 10px;
             border-radius: 6px;
-            border: 1px solid #95979b;
+            border: 1px solid #85878b;
         }
 
         /* --- Chronologie des événements --- */
@@ -105,14 +108,14 @@
         }
 
         .symptoms-table th, .symptoms-table td {
-            border: 1px solid #95979b;
+            border: 1px solid #b5b7bb;
             padding: 3px;
             text-align: left;
             font-size: 14px;
         }
 
         .symptoms-table thead {
-            background-color: #f9fafb;
+            background-color: #e9eaeb;
         }
 
         .symptoms-table th {
@@ -121,7 +124,7 @@
         }
 
         .symptoms-table tbody tr:nth-child(even) {
-            background-color: #f9fafb;
+            background-color: #e9eaeb;
         }
 
         /* --- Graphique --- */
@@ -157,21 +160,13 @@
                 padding: 0;
                 max-width: 100%;
             }
-
-            h1, h2 {
-                page-break-after: avoid;
-            }
-            
-            .symptoms-table, .timeline {
-                page-break-inside: avoid;
-            }
             
             a {
                 text-decoration: none;
                 color: #000;
             }
             
-            .page, .page-break { break-after: page; page-break-after: always;}
+            .page, .page-break { page-break-inside: always!important;}
         }
     </style>
 </head>
@@ -181,7 +176,7 @@
         <header class="header">
             <h1>Rapport Médical et Chronologie des Symptômes - {{ patient_name }}</h1>
             <!--<p class="subtitle">Préparé pour consultation</p>-->
-            <div class="patient-info">
+            <div class="box">
                 <span><strong>Date de création du rapport :</strong> {{ report_date.fr }}</span>
             </div>
         </header>
