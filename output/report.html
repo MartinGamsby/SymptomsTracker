@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Report - Martin Gamsby</title>
-    <style>
+     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
         /* --- Styles Généraux et Variables --- */
@@ -22,7 +22,7 @@
             margin: 20px auto;
             /*padding: 30px;
             background-color: #ffffff;
-            border: 1px solid #95979b;
+            border: 1px solid #65676b;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-radius: 8px;*/
         }
@@ -37,7 +37,7 @@
 
         h1 {
             font-size: 24px;
-            border-bottom: 2px solid #95979b;
+            border-bottom: 2px solid #85878b;
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
@@ -46,9 +46,12 @@
             font-size: 18px;
             color: #374151;
             margin-top: 30px;
-            border-bottom: 1px solid #f3f4f6;
-            padding-bottom: 8px;
             text-align: center;
+            
+            background-color: #e9eaeb;
+            padding: 6px;            
+            border-radius: 6px;
+            border: 1px solid #85878b;
         }
 
         p {
@@ -71,15 +74,15 @@
             margin-left: 30px;
         }
 
-        .patient-info {
+        .box {
             display: flex;
             justify-content: space-between;
             font-size: 14px;
             color: #4b5563;
-            background-color: #f9fafb;
+            background-color: #e9eaeb;
             padding: 10px;
             border-radius: 6px;
-            border: 1px solid #95979b;
+            border: 1px solid #85878b;
         }
 
         /* --- Chronologie des événements --- */
@@ -105,14 +108,14 @@
         }
 
         .symptoms-table th, .symptoms-table td {
-            border: 1px solid #95979b;
+            border: 1px solid #b5b7bb;
             padding: 3px;
             text-align: left;
             font-size: 14px;
         }
 
         .symptoms-table thead {
-            background-color: #f9fafb;
+            background-color: #e9eaeb;
         }
 
         .symptoms-table th {
@@ -121,7 +124,7 @@
         }
 
         .symptoms-table tbody tr:nth-child(even) {
-            background-color: #f9fafb;
+            background-color: #e9eaeb;
         }
 
         /* --- Graphique --- */
@@ -172,8 +175,8 @@
     <div class="container page-break">
         <header class="header">
             <h1>Medical Report and Chronology of Symptoms - Martin Gamsby</h1>
-            <div class="patient-info">
-                <span><strong>Report creation date :</strong> August 13 2025</span>
+            <div class="box">
+                <span><strong>Report creation date :</strong> August 19 2025</span>
             </div>
         </header>
 
@@ -196,29 +199,29 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             <h2>Timeline of Key Events</h2>
             <ul>
                 
-                <li><strong>(6 months)December 2022 - June 2023:</strong> Onset of severe neurological symptoms, coinciding with water damage</li>
+                <li><strong>(6 months)December 2022 - June 2023:</strong> <u>Onset of severe neurological symptoms, coinciding with water damage</u></li>
                 <li class="subtitle">Escalation of symptoms until their peak severity. Multiple medical consultations and tests (Blood tests, EMG, MRI) without conclusive results.</li>
                 
-                <li><strong>(8 months) June 2023 - February 2024:</strong> Nutritionist.</li>
-                <li class="subtitle">Elimination diet with significant reduction in symptoms (~50%). Diet plays a big role. Probably inflammatory.</li>
+                <li><strong>(8 months) June 2023 - February 2024:</strong> <u>Nutritionist. Elimination diet with significant reduction in symptoms (~50%)</u></li>
+                <li class="subtitle">Diet plays a big role. Probably inflammatory.</li>
                 
-                <li><strong>&emsp;[July 2023]:</strong> Osteopathic treatment for a pinched nerve (recommended by a neurologist)</li>
+                <li><strong>&emsp;[July 2023]:</strong> <u>Osteopathic treatment for a pinched nerve (recommended by a neurologist)</u></li>
                 <li class="subtitle">Resolves some symptoms and reduces the rest by about 50%.</li>
                 
-                <li><strong>(15 months) February 2024 -  May 2025:</strong> I had an epiphany : gluten. </li>
+                <li><strong>(15 months) February 2024 -  May 2025:</strong> <u>I had an epiphany : gluten. </u></li>
                 <li class="subtitle">It was hard to find, because there were traces in mayonnaise, oats, etc. It fixes almost everything (with the pinched nerve), until ~May 2025</li>
                 
-                <li><strong>&emsp;[June 2024]:</strong> Under the advice of a doctor: GLUTEN CHALLENGE: All symptoms come back.</li>
+                <li><strong>&emsp;[June 2024]:</strong> <u>Under the advice of a doctor: GLUTEN CHALLENGE: All symptoms come back.</u></li>
                 <li class="subtitle">I feel very bad, the secretary calls me to say that it's negative, without any follow-up.</li>
                 
-                <li><strong>&emsp;[September 2024]:</strong> First major reaction in a long time</li>
+                <li><strong>&emsp;[September 2024]:</strong> <u>First major reaction in a long time</u></li>
                 <li class="subtitle">I got a drop of broth (gluten) in my face/eyes. No need to eat it... It's definitely not celiac disease.</li>
                 
-                <li><strong>(3 months) May 2025 - Now:</strong> I was virtually symptom-free for over a year, but it's back, gradually... Despite a 100% gluten-free diet</li>
+                <li><strong>(3 months) May 2025 - Now:</strong> <u>I was virtually symptom-free for over a year, but it's back, gradually... Despite a 100% gluten-free diet</u></li>
                 <li class="subtitle">After two trips away from home, returning home increases symptoms; this is no coincidence. Is it the house? Mold?</li>
                 
-                <li><strong>&emsp;[August 2024]:</strong> Notable improvement in morning symptoms since installing iAdaptAir 2.0 HEPA air purifier — less morning stiffness/weakness/fatigue.</li>
-                <li class="subtitle"></li>
+                <li><strong>&emsp;[August 2024]:</strong> <u>Notable improvement in morning symptoms since installing iAdaptAir 2.0 HEPA air purifier</u></li>
+                <li class="subtitle">Less morning stiffness/weakness/fatigue.</li>
                 
             </ul>
         </section>
@@ -295,41 +298,274 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>"Re-occupancy is ill-advised until further remediation and re-assessment are conclusive."</td>
                     </tr>
                     
+                    <tr>
+                        <td>Jul 2025</td>
+                        <td>GENIE (for CIRS)</td>
+                        <td>Clinic in Alberta recommends it. Pending confirmation.</td>
+                    </tr>
+                    
                 </tbody>
             </table>
         </section>
 
     </div>
-    <div class="container page-break">
+    <div class="container">
         <section>
-            <h2 class="page">Detailed Symptom Table (24) - Chronological</h2>
-            <p>The symptoms are not all triggered at the same time, I noticed 3 waves:<ol><li>
+            <h2>Symptoms (27)</h2>
+            <p>The symptoms are not all triggered at the same time, I noticed 3 waves after exposure:<ol><li>
 <strong>Minutes:</strong> pressure, breathing issues, etc.
 </li><li>
 <strong>Days:</strong> numbness, vertigo, fatigue, etc.
 </li><li>
 <strong>Post-inflammatory:</strong> headache, nausea, etc.
 </li></ol></p>
+            <h2>Symptoms - Wave 1</h2>
+            <ul>
+                
+                    
+                        <li>Difficulty breathing / Rapid shortness of breath</li>
+                        <!--<li class="subtitle"></li>-->
+                    
+                
+                    
+                        <li>'Pressure' in throat, temples, ears</li>
+                        <!--<li class="subtitle">Most often after eating, at the worst the temples are visibly swollen.</li>-->
+                    
+                
+                    
+                        <li>Heart Palpitations</li>
+                        <!--<li class="subtitle">More often in the evening, sometimes waking up with palpitations, sweating, numbness.</li>-->
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li>Dizziness / Loss of balance</li>
+                        <!--<li class="subtitle"></li>-->
+                    
+                
+                    
+                        <li>General weakness / up to difficulty walking</li>
+                        <!--<li class="subtitle">Before nerve unpinched, sometimes impossible to walk without having to lean on something. Doesn't throw strong enough, etc.</li>-->
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li>Stomach ache</li>
+                        <!--<li class="subtitle"></li>-->
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <h2>Symptoms - Wave 2</h2>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li>Numbness (whole body)</li>
+                    
+                
+                    
+                        <li>Loss of thirst/hunger sensation</li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li>Clumsy</li>
+                    
+                
+                    
+                        <li>Nausea</li>
+                    
+                
+                    
+                        <li>Fatigue</li>
+                    
+                
+                    
+                
+                    
+                        <li>Body aches</li>
+                    
+                
+                    
+                        <li>Irritability</li>
+                    
+                
+                    
+                        <li>Unusual pain</li>
+                    
+                
+                    
+                        <li>Difficulty concentrating / learning</li>
+                    
+                
+                    
+                        <li>Insomnia</li>
+                    
+                
+                    
+                
+                    
+                        <li>Blocked nose</li>
+                    
+                
+                    
+                        <li>Ears feel plugged</li>
+                    
+                
+                    
+                        <li>Tinnitus</li>
+                    
+                
+                    
+                        <li>Morning stiffness/body pain</li>
+                    
+                
+                    
+                
+                    
+                        <li>Loss of sensation of hot/cold</li>
+                    
+                
+                    
+                
+                    
+                        <li>'Always Thirsty' (sometimes)</li>
+                    
+                
+                    
+                        <li>Loss of urge to go to the toilet</li>
+                    
+                
+                    
+                        <li>Frequent urge to go to the toilet</li>
+                    
+                
+            </ul>
+            <h2>Symptoms - Wave 3</h2>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li>Headache</li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                        <li>(And some symptoms from wave 2)</li>
+            </ul>
+            
+            <h2>Detailed Symptom Table - Chronological</h2>            
             <table class="symptoms-table">
                 <thead>
                     <tr>
                         <th>Symptom</th>
                         <th>First time noticed</th>
                         <th>Better after pinched nerve</th>
-                        <th>Wave 1</th>
-                        <th>Wave 2</th>
-                        <th>Wave 3</th>
                         <th>Notes</th>
                     </tr>
                 </thead>
                 <tbody>
                     
                     <tr>
-                        <td>Numbness</td>
+                        <td>Numbness (whole body)</td>
                         <td>Dec 21 2022</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td>Sometimes localized. Sometimes the whole body (starting April 2023). I don't feel a plucked hair, a bleeding nose, my foot on the ground. Knocking on a door... I don't feel anything. I tried it on brick. Nothing. etc.</td>
                     </tr>
@@ -338,9 +574,6 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Heart Palpitations</td>
                         <td>Dec 25 2022</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
                         <td>More often in the evening, sometimes waking up with palpitations, sweating, numbness.</td>
                     </tr>
                     
@@ -348,9 +581,6 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Clumsy</td>
                         <td>Dec 26 2022</td>
                         <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
                         <td>Dexterity issues, dropping things. Turning pages, keyboard and piano difficulties. Gets caught on everything. Slurred words.</td>
                     </tr>
                     
@@ -358,18 +588,12 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Muscle weakness</td>
                         <td>Jan 13 2023</td>
                         <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
                         <td>Found to be caused by a pinched nerve. Before: difficulty closing fingers, picking up a plate with fingertips.</td>
                     </tr>
                     
                     <tr>
-                        <td>General weakness</td>
+                        <td>General weakness / up to difficulty walking</td>
                         <td>Feb 04 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td>Before nerve unpinched, sometimes impossible to walk without having to lean on something. Doesn't throw strong enough, etc.</td>
                     </tr>
@@ -378,18 +602,12 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Fatigue</td>
                         <td>Feb 09 2023</td>
                         <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
                         <td></td>
                     </tr>
                     
                     <tr>
                         <td>Dizziness / Loss of balance</td>
                         <td>Feb 13 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td></td>
                     </tr>
@@ -398,18 +616,12 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Tremors</td>
                         <td>Feb 14 2023</td>
                         <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
                         <td>100% resolved after nerve unpinched</td>
                     </tr>
                     
                     <tr>
                         <td>Difficulty breathing / Rapid shortness of breath</td>
                         <td>Feb 15 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td></td>
                     </tr>
@@ -418,19 +630,20 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>'Pressure' in throat, temples, ears</td>
                         <td>Mar 01 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
                         <td>Most often after eating, at the worst the temples are visibly swollen.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Headache</td>
+                        <td>Mar 06 2023</td>
+                        <td style='text-align: center'></td>
+                        <td></td>
                     </tr>
                     
                     <tr>
                         <td>'Always Thirsty' (sometimes)</td>
                         <td>Mar 06 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>It only happened once or twice.</td>
                     </tr>
                     
@@ -438,38 +651,12 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Frequent urge to go to the toilet</td>
                         <td>Mar 06 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>Idem.</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Headache</td>
-                        <td>Mar 06 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td></td>
                     </tr>
                     
                     <tr>
                         <td>Body aches</td>
                         <td>Mar 28 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
-                        <td></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Loss of urge to go to the toilet</td>
-                        <td>Apr 17 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td></td>
                     </tr>
@@ -478,19 +665,20 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Loss of sensation of hot/cold</td>
                         <td>Apr 17 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
                         <td>Besides the sensation on my hands: I almost burned myself (I realized it was hot, it wasn't a reflex), another time I realized I was shivering. But I wasn't cold.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Loss of urge to go to the toilet</td>
+                        <td>Apr 17 2023</td>
+                        <td style='text-align: center'></td>
+                        <td></td>
                     </tr>
                     
                     <tr>
                         <td>Irritability</td>
                         <td>Apr 19 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>I seem to be more irritable than before... Hard to measure.</td>
                     </tr>
                     
@@ -498,9 +686,6 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Loss of thirst/hunger sensation</td>
                         <td>Apr 25 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>I first realized it after several days of not feeling anything. When it came back, I was very thirsty... I forgot to drink.</td>
                     </tr>
                     
@@ -508,9 +693,6 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Unusual pain</td>
                         <td>Apr 26 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>Sometimes I have pain that's hard to describe... does it burn? No... does it 'pinch'? No... Sometimes it stings and I can't stop scratching. This has never happened to me before.</td>
                     </tr>
                     
@@ -518,9 +700,6 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Difficulty concentrating / learning</td>
                         <td>May 08 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>I noticed it late, but looking back, it happened often. It didn't happen before.</td>
                     </tr>
                     
@@ -528,18 +707,12 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Insomnia</td>
                         <td>May 30 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>I seem to have more difficulty falling asleep when I have the most other symptoms during the day.</td>
                     </tr>
                     
                     <tr>
                         <td>Stomach ache</td>
                         <td>Jun 03 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td></td>
                     </tr>
@@ -548,9 +721,6 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Nausea</td>
                         <td>Jul 02 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td></td>
                     </tr>
                     
@@ -558,10 +728,28 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                         <td>Blocked nose</td>
                         <td>Jun 04 2024</td>
                         <td style='text-align: center'></td>
+                        <td>I noticed it late, but looking back, it happened often, especially at night and in the morning, without having a cold. It didn't happen before.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Ears feel plugged</td>
+                        <td>Jun 04 2024</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
+                        <td>Idem</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Tinnitus</td>
+                        <td>Jun 04 2024</td>
                         <td style='text-align: center'></td>
-                        <td>I noticed it late, but looking back, it happened often, especially at night, without having a cold. It didn't happen before.</td>
+                        <td>Idem</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Morning stiffness/body pain</td>
+                        <td>Jun 04 2024</td>
+                        <td style='text-align: center'></td>
+                        <td>Idem</td>
                     </tr>
                     
                 </tbody>

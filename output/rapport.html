@@ -22,7 +22,7 @@
             margin: 20px auto;
             /*padding: 30px;
             background-color: #ffffff;
-            border: 1px solid #95979b;
+            border: 1px solid #65676b;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-radius: 8px;*/
         }
@@ -37,7 +37,7 @@
 
         h1 {
             font-size: 24px;
-            border-bottom: 2px solid #95979b;
+            border-bottom: 2px solid #85878b;
             padding-bottom: 10px;
             margin-bottom: 15px;
         }
@@ -46,9 +46,12 @@
             font-size: 18px;
             color: #374151;
             margin-top: 30px;
-            border-bottom: 1px solid #f3f4f6;
-            padding-bottom: 8px;
             text-align: center;
+            
+            background-color: #e9eaeb;
+            padding: 6px;            
+            border-radius: 6px;
+            border: 1px solid #85878b;
         }
 
         p {
@@ -67,19 +70,19 @@
 
         .subtitle {
             font-size: 15px;
-            color: #5b6270;
+            color: #6b7280;
             margin-left: 30px;
         }
 
-        .patient-info {
+        .box {
             display: flex;
             justify-content: space-between;
             font-size: 14px;
             color: #4b5563;
-            background-color: #f9fafb;
+            background-color: #e9eaeb;
             padding: 10px;
             border-radius: 6px;
-            border: 1px solid #95979b;
+            border: 1px solid #85878b;
         }
 
         /* --- Chronologie des événements --- */
@@ -105,14 +108,14 @@
         }
 
         .symptoms-table th, .symptoms-table td {
-            border: 1px solid #95979b;
+            border: 1px solid #b5b7bb;
             padding: 3px;
             text-align: left;
             font-size: 14px;
         }
 
         .symptoms-table thead {
-            background-color: #f9fafb;
+            background-color: #e9eaeb;
         }
 
         .symptoms-table th {
@@ -121,7 +124,7 @@
         }
 
         .symptoms-table tbody tr:nth-child(even) {
-            background-color: #f9fafb;
+            background-color: #e9eaeb;
         }
 
         /* --- Graphique --- */
@@ -157,21 +160,13 @@
                 padding: 0;
                 max-width: 100%;
             }
-
-            h1, h2 {
-                page-break-after: avoid;
-            }
-            
-            .symptoms-table, .timeline {
-                page-break-inside: avoid;
-            }
             
             a {
                 text-decoration: none;
                 color: #000;
             }
             
-            .page, .page-break { break-after: page; page-break-after: always;}
+            .page, .page-break { page-break-inside: always!important;}
         }
     </style>
 </head>
@@ -181,8 +176,8 @@
         <header class="header">
             <h1>Rapport Médical et Chronologie des Symptômes - Martin Gamsby</h1>
             <!--<p class="subtitle">Préparé pour consultation</p>-->
-            <div class="patient-info">
-                <span><strong>Date de création du rapport :</strong> 13 août 2025</span>
+            <div class="box">
+                <span><strong>Date de création du rapport :</strong> 19 août 2025</span>
             </div>
         </header>
 
@@ -206,29 +201,29 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
             <h2>Chronologie des Événements Clés</h2>
             <ul>
                 
-                <li><strong>(6 mois) Décembre 2022 - Juin 2023:</strong> Début de symptômes neurologiques sévères, coïncidant avec un dégât d'eau</li>
+                <li><strong>(6 mois) Décembre 2022 - Juin 2023 :</strong> <u>Début de symptômes neurologiques sévères, coïncidant avec un dégât d'eau</u></li>
                 <li class="subtitle">Escalade des symptômes jusqu'à leur pic de sévérité. Multiples consultations médicales et tests (Sang, EMG, IRM) sans résultats concluants.</li>
                 
-                <li><strong>(8 mois) Juin 2023 - Février 2024:</strong> Suivi Nutritionniste.</li>
-                <li class="subtitle">Diète d'élimination avec diminution notable des symptômes (~50%). L'alimentation joue un grand rôle. Probablement inflammatoire.</li>
+                <li><strong>(8 mois) Juin 2023 - Février 2024 :</strong> <u>Suivi Nutritionniste. Diète d'élimination avec diminution notable des symptômes (~50%)</u></li>
+                <li class="subtitle">L'alimentation joue un grand rôle. Probablement inflammatoire.</li>
                 
-                <li><strong>&emsp;[Juillet 2023]:</strong> Traitement ostéopathique pour un nerf coincé (recommandation d'un neurologue)</li>
+                <li><strong>&emsp;[Juillet 2023] :</strong> <u>Traitement ostéopathique pour un nerf coincé (recommandation d'un neurologue)</u></li>
                 <li class="subtitle">Résout quelques symptômes et réduit d'environ 50% le reste.</li>
                 
-                <li><strong>(15 mois) Février 2024 - Mai 2025:</strong> J'ai une révélation : le gluten.</li>
+                <li><strong>(15 mois) Février 2024 - Mai 2025 :</strong> <u>J'ai une révélation : le gluten.</u></li>
                 <li class="subtitle">C'était difficile à trouver, parce qu'il y avait des traces dans la mayonnaise, l'avoine, etc. Ça règle pratiquement tout (avec le nerf coincé), jusqu'à ~mai 2025</li>
                 
-                <li><strong>&emsp;[Juin 2024]:</strong> Sous le conseil d'un médecin: DÉFI GLUTEN: Tous les symptômes reviennent.</li>
+                <li><strong>&emsp;[Juin 2024] :</strong> <u>Sous le conseil d'un médecin: DÉFI GLUTEN: Tous les symptômes reviennent.</u></li>
                 <li class="subtitle">Je me sens très mal, la secrétaire m'appelle pour dire que c'est négatif, sans suivi.</li>
                 
-                <li><strong>&emsp;[Septembre 2024]:</strong> Première grosse réaction depuis longtemps</li>
+                <li><strong>&emsp;[Septembre 2024] :</strong> <u>Première grosse réaction depuis longtemps</u></li>
                 <li class="subtitle">J'ai reçu une goutte de bouillon (gluten) dans le visage/yeux. Pas besoin d'en manger... Ce n'est définitivement pas la maladie coeliaque.</li>
                 
-                <li><strong>(3 mois) Mai 2025 - Aujourd'hui:</strong> J'étais pratiquement sans symptômes pendant plus qu'un an, mais ça revient, graduellement... Malgré un régime 100% sans gluten</li>
+                <li><strong>(3 mois) Mai 2025 - Aujourd'hui :</strong> <u>J'étais pratiquement sans symptômes pendant plus qu'un an, mais ça revient, graduellement... Malgré un régime 100% sans gluten</u></li>
                 <li class="subtitle">Après 2 séjours en dehors de la maison, le retour augmente les symptômes, ce n'est pas une coincidence. C'est la maison? De la moisissure?</li>
                 
-                <li><strong>&emsp;[Août 2024]:</strong> Amélioration notable des symptômes matinaux depuis l'installation du purificateur d'air HEPA iAdaptAir 2.0 — moins de raideur/faiblesse/fatigue matinale.</li>
-                <li class="subtitle"></li>
+                <li><strong>&emsp;[Août 2024] :</strong> <u>Amélioration notable des symptômes matinaux depuis l'installation du purificateur d'air HEPA iAdaptAir 2.0</u></li>
+                <li class="subtitle">Moins de raideur/faiblesse/fatigue matinale.</li>
                 
             </ul>
         </section>
@@ -305,39 +300,272 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>"Il est déconseillé de réoccuper les lieux tant que des travaux de remédiation et une réévaluation ne seront pas concluants."</td>
                     </tr>
                     
+                    <tr>
+                        <td>juil. 2025</td>
+                        <td>GENIE (pour SRIC/CIRS)</td>
+                        <td>Clinique en Alberta le recommande. En attente de confirmation.</td>
+                    </tr>
+                    
                 </tbody>
             </table>
         </section>
 
         <section>
-            <h2 class="page-break">Tableau Détaillé des Symptômes (24) - Chronologique</h2>
-            <p>Les symptômes ne se déclenchent pas tous au même moment. J'ai noté trois vagues: <ol><li>
+            <h2>Symptômes (27)</h2>
+            <p>Les symptômes ne se déclenchent pas tous au même moment. J'ai noté trois vagues après exposition: <ol><li>
 <strong>Minutes:</strong> pression, difficultés respiratoires, etc.
 </li><li>
 <strong>Jours:</strong> engourdissements, vertiges, fatigue, etc.
 </li><li>
 <strong>Post-inflammatoire:</strong> maux de tête, nausées, etc.
 </li></ol></p>
+            <h2>Symptômes - Vague 1</h2>
+            <ul>
+                
+                    
+                        <li>Respiration difficile / Essouflement rapide</li>
+                        <!--<li class="subtitle"></li>-->
+                    
+                
+                    
+                        <li>Enflement/'Pression' gorge, tempes, oreilles</li>
+                        <!--<li class="subtitle">Le plus souvent après avoir mangé, au pire les tempes sont visiblement enflées.</li>-->
+                    
+                
+                    
+                        <li>Palpitations</li>
+                        <!--<li class="subtitle">Plus souvent le soir, quelques fois réveillé avec palpitations, sueurs, engourdissements.</li>-->
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li>Étourdissements / Manque d'équilibre</li>
+                        <!--<li class="subtitle"></li>-->
+                    
+                
+                    
+                        <li>Faiblesse générale / jusqu'à difficulté à marcher</li>
+                        <!--<li class="subtitle">Avant le nerf décoincé, parfois impossible de marcher sans devoir s'appuyer sur quelque chose. Lance pas assez fort, etc.</li>-->
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li>Mal au ventre</li>
+                        <!--<li class="subtitle"></li>-->
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+            <h2>Symptômes - Vague 2</h2>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li>Engourdissement (corps entier)</li>
+                    
+                
+                    
+                        <li>Perte de sensation de soif/faim</li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li>Maladroit</li>
+                    
+                
+                    
+                        <li>Nausée</li>
+                    
+                
+                    
+                        <li>Fatigue</li>
+                    
+                
+                    
+                
+                    
+                        <li>Courbatures</li>
+                    
+                
+                    
+                        <li>Irritabilité</li>
+                    
+                
+                    
+                        <li>Douleur inhabituelle</li>
+                    
+                
+                    
+                        <li>Difficulté à se concentrer / apprendre</li>
+                    
+                
+                    
+                        <li>Insomnie</li>
+                    
+                
+                    
+                
+                    
+                        <li>Nez bloqué</li>
+                    
+                
+                    
+                        <li>Oreilles bouchées</li>
+                    
+                
+                    
+                        <li>Acouphène</li>
+                    
+                
+                    
+                        <li>Raideur/douleur matinale</li>
+                    
+                
+                    
+                
+                    
+                        <li>Perte de sensation de chaud/froid</li>
+                    
+                
+                    
+                
+                    
+                        <li>'Toujours Soif' (parfois)</li>
+                    
+                
+                    
+                        <li>Perte de l'envie d'aller aux toilettes</li>
+                    
+                
+                    
+                        <li>Envie d'aller aux toilettes fréquente</li>
+                    
+                
+            </ul>
+            <h2>Symptômes - Vague 3</h2>
+            <ul>
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                        <li>Mal de tête</li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                        <li>(And quelques symptômes de la 2e vague)</li>
+            </ul>
+            
+            <h2>Tableau Détaillé des Symptômes - Chronologique</h2>
             <table class="symptoms-table">
                 <thead>
                     <tr>
                         <th>Symptôme</th>
                         <th>Première fois remarqué</th>
                         <th>Mieux après nerf coincé</th>
-                        <th>Vague 1</th>
-                        <th>Vague 2</th>
-                        <th>Vague 3</th>
                         <th>Remarques</th>
                     </tr>
                 </thead>
                 <tbody>
                     
                     <tr>
-                        <td>Engourdissement</td>
+                        <td>Engourdissement (corps entier)</td>
                         <td>21 déc. 2022</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td>Parfois locallisé. Quelques périodes le corps au complet (à partir d'avril 2023). Je ne sens pas un poil épilé, un nez qui saigne, mon pied par terre. Cogner sur une porte... Je sens rien. J'ai essayé sur de la brique. Rien. etc.</td>
                     </tr>
@@ -346,9 +574,6 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Palpitations</td>
                         <td>25 déc. 2022</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
                         <td>Plus souvent le soir, quelques fois réveillé avec palpitations, sueurs, engourdissements.</td>
                     </tr>
                     
@@ -356,9 +581,6 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Maladroit</td>
                         <td>26 déc. 2022</td>
                         <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
                         <td>Problèmes de dextérité, échappe les choses. Tourner les pages, clavier et piano difficiles. S'accroche partout. Mots mal articulés.</td>
                     </tr>
                     
@@ -366,18 +588,12 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Faiblesse musculaire</td>
                         <td>13 janv. 2023</td>
                         <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
                         <td>Finalement trouvé que c'était dû à un nerf coincé. Avant: difficulté à fermer les doigts, à prendre une assiette à bout de doigts.</td>
                     </tr>
                     
                     <tr>
-                        <td>Faiblesse générale</td>
+                        <td>Faiblesse générale / jusqu'à difficulté à marcher</td>
                         <td>04 févr. 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td>Avant le nerf décoincé, parfois impossible de marcher sans devoir s'appuyer sur quelque chose. Lance pas assez fort, etc.</td>
                     </tr>
@@ -386,18 +602,12 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Fatigue</td>
                         <td>09 févr. 2023</td>
                         <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
                         <td></td>
                     </tr>
                     
                     <tr>
                         <td>Étourdissements / Manque d'équilibre</td>
                         <td>13 févr. 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td></td>
                     </tr>
@@ -406,9 +616,6 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Tremblements</td>
                         <td>14 févr. 2023</td>
                         <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
                         <td>Résolu à 100% après nerf décoincé</td>
                     </tr>
                     
@@ -416,29 +623,27 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Respiration difficile / Essouflement rapide</td>
                         <td>15 févr. 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
                         <td></td>
                     </tr>
                     
                     <tr>
-                        <td>'Pression' gorge, tempes, oreilles</td>
+                        <td>Enflement/'Pression' gorge, tempes, oreilles</td>
                         <td>01 mars 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
                         <td>Le plus souvent après avoir mangé, au pire les tempes sont visiblement enflées.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Mal de tête</td>
+                        <td>06 mars 2023</td>
+                        <td style='text-align: center'></td>
+                        <td></td>
                     </tr>
                     
                     <tr>
                         <td>'Toujours Soif' (parfois)</td>
                         <td>06 mars 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>C'est arrivé seulement une ou 2 fois.</td>
                     </tr>
                     
@@ -446,38 +651,12 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Envie d'aller aux toilettes fréquente</td>
                         <td>06 mars 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>Idem.</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Mal de tête</td>
-                        <td>06 mars 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td></td>
                     </tr>
                     
                     <tr>
                         <td>Courbatures</td>
                         <td>28 mars 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
-                        <td></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Perte de l'envie d'aller aux toilettes</td>
-                        <td>17 avr. 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td></td>
                     </tr>
@@ -486,19 +665,20 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Perte de sensation de chaud/froid</td>
                         <td>17 avr. 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'></td>
                         <td>Outre la sensation sur les mains: J'ai faillit me brûler (j'ai réalisé que c'était chaud, ce n'était pas un réflexe), une autre fois j'ai réalisé que je grelottait. Mais je n'avais pas froid.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Perte de l'envie d'aller aux toilettes</td>
+                        <td>17 avr. 2023</td>
+                        <td style='text-align: center'></td>
+                        <td></td>
                     </tr>
                     
                     <tr>
                         <td>Irritabilité</td>
                         <td>19 avr. 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>Je semble être plus irritable qu'avant ... Difficile à mesurer.</td>
                     </tr>
                     
@@ -506,9 +686,6 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Perte de sensation de soif/faim</td>
                         <td>25 avr. 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>J'ai réalisé la première fois après plusieurs jours où je ne sentais rien. Quand c'est revenu, j'avais très soif... J'ai oublié de boire.</td>
                     </tr>
                     
@@ -516,9 +693,6 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Douleur inhabituelle</td>
                         <td>26 avr. 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>Parfois j'ai des douleurs difficile à décrire... ça brule? non.. ça 'pince'? non... Parfois ça pique et je ne peux pas m'empêcher de gratter. Ça ne m'était jamais arrivé avant.</td>
                     </tr>
                     
@@ -526,9 +700,6 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Difficulté à se concentrer / apprendre</td>
                         <td>08 mai 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent. Ça n'arrivait pas avant.</td>
                     </tr>
                     
@@ -536,18 +707,12 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Insomnie</td>
                         <td>30 mai 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td>Je semble avoir plus de difficulté à m'endormir quand j'ai le plus d'autres symptômes dans la journée.</td>
                     </tr>
                     
                     <tr>
                         <td>Mal au ventre</td>
                         <td>03 juin 2023</td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td style='text-align: center'></td>
                         <td></td>
                     </tr>
@@ -556,9 +721,6 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Nausée</td>
                         <td>02 juil. 2023</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
-                        <td style='text-align: center'>✓</td>
                         <td></td>
                     </tr>
                     
@@ -566,10 +728,28 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                         <td>Nez bloqué</td>
                         <td>04 juin 2024</td>
                         <td style='text-align: center'></td>
+                        <td>Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent, surtout la nuit et le matin, sans avoir de rhume. Ça n'arrivait pas avant.</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Oreilles bouchées</td>
+                        <td>04 juin 2024</td>
                         <td style='text-align: center'></td>
-                        <td style='text-align: center'>✓</td>
+                        <td>Idem</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Acouphène</td>
+                        <td>04 juin 2024</td>
                         <td style='text-align: center'></td>
-                        <td>Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent, surtout la nuit, sans avoir de rhume. Ça n'arrivait pas avant.</td>
+                        <td>Idem</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Raideur/douleur matinale</td>
+                        <td>04 juin 2024</td>
+                        <td style='text-align: center'></td>
+                        <td>Idem</td>
                     </tr>
                     
                 </tbody>
@@ -647,7 +827,7 @@ Nouvelle découverte: les symptômes s'intensifient à chaque retour au domicile
                 <li><strong>déc. 2024</strong> Rendez-vous avec un 2e acupuncteur.</li>
                 <li class="subtitle">Ça règle un autre 80% de ma perte de sensibilité.</li>
                 
-                <li><strong>févr. 2024</strong> J'ai eu une révélation : le gluten.</li>
+                <li><strong>févr. 2024</strong> Finalement trouvé grâce au régime d'élimination : le gluten</li>
                 <li class="subtitle">C'était difficile à trouver, parce qu'il y avait des traces dans la mayonnaise, l'avoine, etc.</li>
                 
                 <li><strong>avr. 2024</strong> Rendez-vous avec un 3e médecin: Coeliaque?</li>

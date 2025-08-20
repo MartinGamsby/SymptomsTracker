@@ -12,7 +12,9 @@ def run_cmd(self, arg):
     subprocess.run(args)
 
 
-def generate_pdf(patient_name, summary_text, symptoms_summary_text, symptoms, key_events, notable_events, tests, output_pdf, language="fr", orientation='Landscape'):
+def generate_pdf(patient_name, summary_text, symptoms_summary_text, symptoms, 
+        symptoms_chrono, key_events, notable_events, tests, output_pdf, 
+        language="fr", orientation='Landscape'):
 
     if language == "fr":        
         locale.setlocale(locale.LC_ALL, 'fr_CA.UTF-8')
@@ -30,7 +32,8 @@ def generate_pdf(patient_name, summary_text, symptoms_summary_text, symptoms, ke
                 'key_events': key_events,
                 'notable_events': notable_events,
                 'tests': tests,
-                'symptoms': symptoms
+                'symptoms': symptoms,
+                'symptoms_chrono': symptoms_chrono,
               }
 
     template_loader = jinja2.FileSystemLoader('./')

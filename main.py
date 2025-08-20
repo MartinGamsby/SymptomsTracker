@@ -171,8 +171,8 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         #    "Acupuncturist follow-up")),
         Event(MonthDate(datetime(
             2024, 2, 2)), String(
-            "J'ai eu une révélation : le gluten.",
-            "I had an epiphany : gluten. "), String(
+            "Finalement trouvé grâce au régime d'élimination : le gluten",
+            "Finally found from elimination diet: gluten."), String(
             "C'était difficile à trouver, parce qu'il y avait des traces dans la mayonnaise, l'avoine, etc.",
             "It was hard because I had traces in the mayonnaise, the oats, etc.")),
         #Event(MonthDate(datetime(
@@ -246,10 +246,10 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         Event(String(
             "(8 mois) Juin 2023 - Février 2024",
             "(8 months) June 2023 - February 2024"), String(
-            "Suivi Nutritionniste.",
-            "Nutritionist."), String(
-            "Diète d'élimination avec diminution notable des symptômes (~50%). L'alimentation joue un grand rôle. Probablement inflammatoire.",
-            "Elimination diet with significant reduction in symptoms (~50%). Diet plays a big role. Probably inflammatory.")),
+            "Suivi Nutritionniste. Diète d'élimination avec diminution notable des symptômes (~50%)",
+            "Nutritionist. Elimination diet with significant reduction in symptoms (~50%)"), String(
+            "L'alimentation joue un grand rôle. Probablement inflammatoire.",
+            "Diet plays a big role. Probably inflammatory.")),
         Event(String(
             "&emsp;[Juillet 2023]",
             "&emsp;[July 2023]"), String(
@@ -288,10 +288,10 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         Event(String(
             "&emsp;[Août 2024]",
             "&emsp;[August 2024]"), String(
-            "Amélioration notable des symptômes matinaux depuis l'installation du purificateur d'air HEPA iAdaptAir 2.0 — moins de raideur/faiblesse/fatigue matinale.",
-            "Notable improvement in morning symptoms since installing iAdaptAir 2.0 HEPA air purifier — less morning stiffness/weakness/fatigue."), String(
-            "",
-            "")),
+            "Amélioration notable des symptômes matinaux depuis l'installation du purificateur d'air HEPA iAdaptAir 2.0",
+            "Notable improvement in morning symptoms since installing iAdaptAir 2.0 HEPA air purifier"), String(
+            "Moins de raideur/faiblesse/fatigue matinale.",
+            "Less morning stiffness/weakness/fatigue.")),
             
         ]
         
@@ -370,6 +370,12 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             "HERTSMI-2 test: 18"), String(
             "\"Il est déconseillé de réoccuper les lieux tant que des travaux de remédiation et une réévaluation ne seront pas concluants.\"",
             "\"Re-occupancy is ill-advised until further remediation and re-assessment are conclusive.\"")),
+        TestResults(MonthDate(datetime(
+            2025, 7, 31)), String(
+            "GENIE (pour SRIC/CIRS)",
+            "GENIE (for CIRS)"), String(
+            "Clinique en Alberta le recommande. En attente de confirmation.",
+            "Clinic in Alberta recommends it. Pending confirmation.")),
             
             
         ]
@@ -377,23 +383,30 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         
 
     symptoms = [
-                
-        Symptom(name=String(
-                "Engourdissement",
-                "Numbness"),
+        Symptom(name=String("Respiration difficile / Essouflement rapide",
+                "Difficulty breathing / Rapid shortness of breath"),
             start_date=Date(datetime(
-                2022, 12, 21)),
-            nerve=False,wave1=False,wave2=True,wave3=False,
+                2023, 2, 15)),
+            nerve=False,wave1=True,wave2=True,wave3=False,
             current_status=String(
-                "Résolu à 80% après avoir remédié un nerf coincé.",
-                "80% resolved after fixing a pinched nerve."),
+                "Était résolu sans gluten, mais revient tranquillement.",
+                "Was resolved gluten-free, but is slowly coming back."),
             notes=String(
-                "Parfois locallisé. Quelques périodes le corps au complet (à partir d'avril 2023). Je ne sens pas un poil épilé, un nez qui saigne, mon pied par terre. Cogner sur une porte... Je sens rien. J'ai essayé sur de la brique. Rien. etc.",
-                "Sometimes localized. Sometimes the whole body (starting April 2023). I don't feel a plucked hair, a bleeding nose, my foot on the ground. Knocking on a door... I don't feel anything. I tried it on brick. Nothing. etc.")
+                "",
+                "")
             ),
-                
-        Symptom(name=String(
-                "Palpitations",
+        Symptom(name=String("Enflement/'Pression' gorge, tempes, oreilles",
+                "'Pressure' in throat, temples, ears"),
+            start_date=Date(datetime(
+                2023, 3, 1)),
+            nerve=False,wave1=True,wave2=False,wave3=False,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Le plus souvent après avoir mangé, au pire les tempes sont visiblement enflées.",
+                "Most often after eating, at the worst the temples are visibly swollen.")
+            ),
+        Symptom(name=String("Palpitations",
                 "Heart Palpitations"),
             start_date=Date(datetime(
                 2022, 12, 25)),
@@ -404,10 +417,56 @@ New discovery: symptoms intensify each time returning home after an absence (sus
             notes=String(
                 "Plus souvent le soir, quelques fois réveillé avec palpitations, sueurs, engourdissements.",
                 "More often in the evening, sometimes waking up with palpitations, sweating, numbness.")
+            ),                
+        
+        Symptom(name=String("Engourdissement (corps entier)",
+                "Numbness (whole body)"),
+            start_date=Date(datetime(
+                2022, 12, 21)),
+            nerve=False,wave1=False,wave2=True,wave3=False,
+            current_status=String(
+                "Résolu à 80% après avoir remédié un nerf coincé.",
+                "80% resolved after fixing a pinched nerve."),
+            notes=String(
+                "Parfois locallisé. Quelques périodes le corps au complet (à partir d'avril 2023). Je ne sens pas un poil épilé, un nez qui saigne, mon pied par terre. Cogner sur une porte... Je sens rien. J'ai essayé sur de la brique. Rien. etc.",
+                "Sometimes localized. Sometimes the whole body (starting April 2023). I don't feel a plucked hair, a bleeding nose, my foot on the ground. Knocking on a door... I don't feel anything. I tried it on brick. Nothing. etc.")
             ),
-               
-        Symptom(name=String(
-                "Maladroit",
+        Symptom(name=String("Perte de sensation de soif/faim",
+                "Loss of thirst/hunger sensation"),
+            start_date=Date(datetime(
+                2023, 4, 25)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "J'ai réalisé la première fois après plusieurs jours où je ne sentais rien. Quand c'est revenu, j'avais très soif... J'ai oublié de boire.",
+                "I first realized it after several days of not feeling anything. When it came back, I was very thirsty... I forgot to drink.")
+            ),
+        Symptom(name=String("Étourdissements / Manque d'équilibre",
+                "Dizziness / Loss of balance"),
+            start_date=Date(datetime(
+                2023, 2, 13)),
+            nerve=False,wave1=True,wave2=True,wave3=False,
+            current_status=String(
+                "Était résolu sans gluten, mais revient tranquillement.",
+                "Was resolved gluten-free, but is slowly coming back."),
+            notes=String(
+                "",
+                "")
+            ),
+        Symptom(name=String("Faiblesse générale / jusqu'à difficulté à marcher",
+                "General weakness / up to difficulty walking"),
+            start_date=Date(datetime(
+                2023, 2, 4)),
+            nerve=False,wave1=True,wave2=True,wave3=False,
+            current_status=String(
+                "Résolu à 50% après nerf décoincé",
+                "50% resolved after nerve unpinched"),
+            notes=String(
+                "Avant le nerf décoincé, parfois impossible de marcher sans devoir s'appuyer sur quelque chose. Lance pas assez fort, etc.",
+                "Before nerve unpinched, sometimes impossible to walk without having to lean on something. Doesn't throw strong enough, etc.")
+            ),
+        Symptom(name=String("Maladroit",
                 "Clumsy"),
             start_date=Date(datetime(
                 2022, 12, 26)),
@@ -419,9 +478,152 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Problèmes de dextérité, échappe les choses. Tourner les pages, clavier et piano difficiles. S'accroche partout. Mots mal articulés.",
                 "Dexterity issues, dropping things. Turning pages, keyboard and piano difficulties. Gets caught on everything. Slurred words.")
             ),
-                
-        Symptom(name=String(
-                "Faiblesse musculaire",
+
+        Symptom(name=String("Nausée",
+                "Nausea"),
+            start_date=Date(datetime(
+                2023, 7, 2)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "",
+                "")
+            ),
+        Symptom(name=String("Fatigue", ""),
+            start_date=Date(datetime(
+                2023, 2, 9)),
+            nerve=True,wave1=False,wave2=True,wave3=False,
+            current_status=String(
+                "Résolu à 80% après nerf décoincé. Un autre 80% après l'acupunture.",
+                "80% resolved after nerve unpinched. Another 80% after acupuncture."),
+            notes=String(
+                "",
+                "")
+            ),
+
+        Symptom(name=String("Mal de tête",
+                "Headache"),
+            start_date=Date(datetime(
+                2023, 3, 6)),
+            nerve=False,wave1=False,wave2=False,wave3=True,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "",
+                "")
+            ),
+        Symptom(name=String("Courbatures",
+                "Body aches"),
+            start_date=Date(datetime(
+                2023, 3, 28)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "",
+                "")
+            ),
+
+        Symptom(name=String("Irritabilité",
+                "Irritability"),
+            start_date=Date(datetime(
+                2023, 4, 19)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Je semble être plus irritable qu'avant ... Difficile à mesurer.",
+                "I seem to be more irritable than before... Hard to measure.")
+            ),
+
+        Symptom(name=String("Douleur inhabituelle",
+                "Unusual pain"),
+            start_date=Date(datetime(
+                2023, 4, 26)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Parfois j'ai des douleurs difficile à décrire... ça brule? non.. ça 'pince'? non... Parfois ça pique et je ne peux pas m'empêcher de gratter. Ça ne m'était jamais arrivé avant.",
+                "Sometimes I have pain that's hard to describe... does it burn? No... does it 'pinch'? No... Sometimes it stings and I can't stop scratching. This has never happened to me before.")
+            ),
+        Symptom(name=String("Difficulté à se concentrer / apprendre",
+                "Difficulty concentrating / learning"),
+            start_date=Date(datetime(
+                2023, 5, 8)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent. Ça n'arrivait pas avant.",
+                "I noticed it late, but looking back, it happened often. It didn't happen before.")
+            ),
+        Symptom(name=String("Insomnie",
+                "Insomnia"),
+            start_date=Date(datetime(
+                2023, 5, 30)),
+            nerve=False,wave1=False,wave2=True,wave3=True,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Je semble avoir plus de difficulté à m'endormir quand j'ai le plus d'autres symptômes dans la journée.",
+                "I seem to have more difficulty falling asleep when I have the most other symptoms during the day.")
+            ),
+        Symptom(name=String("Mal au ventre",
+                "Stomach ache"),
+            start_date=Date(datetime(
+                2023, 6, 3)),
+            nerve=False,wave1=True,wave2=True,wave3=False,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "",
+                "")
+            ),
+
+        Symptom(name=String("Nez bloqué",
+                "Blocked nose"),
+            start_date=Date(datetime(
+                2024, 6, 4)),
+            nerve=False,wave1=False,wave2=True,wave3=False,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent, surtout la nuit et le matin, sans avoir de rhume. Ça n'arrivait pas avant.",
+                "I noticed it late, but looking back, it happened often, especially at night and in the morning, without having a cold. It didn't happen before.")
+            ),
+        Symptom(name=String("Oreilles bouchées",
+                "Ears feel plugged"),
+            start_date=Date(datetime(
+                2024, 6, 4)),
+            nerve=False,wave1=False,wave2=True,wave3=False,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Idem", "")
+            ),
+        Symptom(name=String("Acouphène",
+                "Tinnitus"),
+            start_date=Date(datetime(
+                2024, 6, 4)),
+            nerve=False,wave1=False,wave2=True,wave3=False,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Idem", "")
+            ),
+        Symptom(name=String("Raideur/douleur matinale",
+                "Morning stiffness/body pain"),
+            start_date=Date(datetime(
+                2024, 6, 4)),
+            nerve=False,wave1=False,wave2=True,wave3=False,
+            current_status=String(
+                "Idem", ""),
+            notes=String(
+                "Idem", "")
+            ),
+        Symptom(name=String("Faiblesse musculaire",
                 "Muscle weakness"),
             start_date=Date(datetime(
                 2023, 1, 13)),
@@ -436,50 +638,19 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Finalement trouvé que c'était dû à un nerf coincé. Avant: difficulté à fermer les doigts, à prendre une assiette à bout de doigts.",
                 "Found to be caused by a pinched nerve. Before: difficulty closing fingers, picking up a plate with fingertips."),
             ),
-                
-        Symptom(name=String(
-                "Faiblesse générale",
-                "General weakness"),
+        
+        Symptom(name=String("Perte de sensation de chaud/froid",
+                "Loss of sensation of hot/cold"),
             start_date=Date(datetime(
-                2023, 2, 4)),
-            nerve=False,wave1=True,wave2=True,wave3=False,
+                2023, 4, 17)),
+            nerve=False,wave1=False,wave2=True,wave3=False,
             current_status=String(
-                "Résolu à 50% après nerf décoincé",
-                "50% resolved after nerve unpinched"),
+                "Idem", ""),
             notes=String(
-                "Avant le nerf décoincé, parfois impossible de marcher sans devoir s'appuyer sur quelque chose. Lance pas assez fort, etc.",
-                "Before nerve unpinched, sometimes impossible to walk without having to lean on something. Doesn't throw strong enough, etc.")
+                "Outre la sensation sur les mains: J'ai faillit me brûler (j'ai réalisé que c'était chaud, ce n'était pas un réflexe), une autre fois j'ai réalisé que je grelottait. Mais je n'avais pas froid.",
+                "Besides the sensation on my hands: I almost burned myself (I realized it was hot, it wasn't a reflex), another time I realized I was shivering. But I wasn't cold.")
             ),
-                
-        Symptom(name=String(
-                "Fatigue", ""),
-            start_date=Date(datetime(
-                2023, 2, 9)),
-            nerve=True,wave1=True,wave2=True,wave3=False,
-            current_status=String(
-                "Résolu à 80% après nerf décoincé. Un autre 80% après l'acupunture.",
-                "80% resolved after nerve unpinched. Another 80% after acupuncture."),
-            notes=String(
-                "",
-                "")
-            ),
-                
-        Symptom(name=String(
-                "Étourdissements / Manque d'équilibre",
-                "Dizziness / Loss of balance"),
-            start_date=Date(datetime(
-                2023, 2, 13)),
-            nerve=False,wave1=True,wave2=True,wave3=False,
-            current_status=String(
-                "Était résolu sans gluten, mais revient tranquillement.",
-                "Was resolved gluten-free, but is slowly coming back."),
-            notes=String(
-                "",
-                "")
-            ),
-                
-        Symptom(name=String(
-                "Tremblements",
+        Symptom(name=String("Tremblements",
                 "Tremors"),
             start_date=Date(datetime(
                 2023, 2, 14)),
@@ -494,36 +665,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "Résolu à 100% après nerf décoincé",
                 "100% resolved after nerve unpinched")
             ),
-                
-        Symptom(name=String(
-                "Respiration difficile / Essouflement rapide",
-                "Difficulty breathing / Rapid shortness of breath"),
-            start_date=Date(datetime(
-                2023, 2, 15)),
-            nerve=False,wave1=True,wave2=True,wave3=False,
-            current_status=String(
-                "Était résolu sans gluten, mais revient tranquillement.",
-                "Was resolved gluten-free, but is slowly coming back."),
-            notes=String(
-                "",
-                "")
-            ),
-                
-        Symptom(name=String(
-                "'Pression' gorge, tempes, oreilles",
-                "'Pressure' in throat, temples, ears"),
-            start_date=Date(datetime(
-                2023, 3, 1)),
-            nerve=False,wave1=True,wave2=False,wave3=False,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "Le plus souvent après avoir mangé, au pire les tempes sont visiblement enflées.",
-                "Most often after eating, at the worst the temples are visibly swollen.")
-            ),
-                
-        Symptom(name=String(
-                "'Toujours Soif' (parfois)",
+        Symptom(name=String("'Toujours Soif' (parfois)",
                 "'Always Thirsty' (sometimes)"),
             start_date=Date(datetime(
                 2023, 3, 6)),
@@ -534,48 +676,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "C'est arrivé seulement une ou 2 fois.",
                 "It only happened once or twice.")
             ),
-                
-        Symptom(name=String(
-                "Envie d'aller aux toilettes fréquente",
-                "Frequent urge to go to the toilet"),
-            start_date=Date(datetime(
-                2023, 3, 6)),
-            nerve=False,wave1=False,wave2=True,wave3=True,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "Idem.",
-                "Idem.")
-            ),
-                
-        Symptom(name=String(
-                "Mal de tête",
-                "Headache"),
-            start_date=Date(datetime(
-                2023, 3, 6)),
-            nerve=False,wave1=False,wave2=False,wave3=True,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "",
-                "")
-            ),
-
-        Symptom(name=String(
-                "Courbatures",
-                "Body aches"),
-            start_date=Date(datetime(
-                2023, 3, 28)),
-            nerve=False,wave1=False,wave2=True,wave3=True,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "",
-                "")
-            ),
-
-        Symptom(name=String(
-                "Perte de l'envie d'aller aux toilettes",
+                Symptom(name=String("Perte de l'envie d'aller aux toilettes",
                 "Loss of urge to go to the toilet"),
             start_date=Date(datetime(
                 2023, 4, 17)),
@@ -586,134 +687,29 @@ New discovery: symptoms intensify each time returning home after an absence (sus
                 "",
                 "")
             ),
-
-        Symptom(name=String(
-                "Perte de sensation de chaud/froid",
-                "Loss of sensation of hot/cold"),
+        Symptom(name=String("Envie d'aller aux toilettes fréquente",
+                "Frequent urge to go to the toilet"),
             start_date=Date(datetime(
-                2023, 4, 17)),
-            nerve=False,wave1=False,wave2=True,wave3=False,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "Outre la sensation sur les mains: J'ai faillit me brûler (j'ai réalisé que c'était chaud, ce n'était pas un réflexe), une autre fois j'ai réalisé que je grelottait. Mais je n'avais pas froid.",
-                "Besides the sensation on my hands: I almost burned myself (I realized it was hot, it wasn't a reflex), another time I realized I was shivering. But I wasn't cold.")
-            ),
-
-        Symptom(name=String(
-                "Irritabilité",
-                "Irritability"),
-            start_date=Date(datetime(
-                2023, 4, 19)),
+                2023, 3, 6)),
             nerve=False,wave1=False,wave2=True,wave3=True,
             current_status=String(
                 "Idem", ""),
             notes=String(
-                "Je semble être plus irritable qu'avant ... Difficile à mesurer.",
-                "I seem to be more irritable than before... Hard to measure.")
-            ),
-
-        Symptom(name=String(
-                "Perte de sensation de soif/faim",
-                "Loss of thirst/hunger sensation"),
-            start_date=Date(datetime(
-                2023, 4, 25)),
-            nerve=False,wave1=False,wave2=True,wave3=True,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "J'ai réalisé la première fois après plusieurs jours où je ne sentais rien. Quand c'est revenu, j'avais très soif... J'ai oublié de boire.",
-                "I first realized it after several days of not feeling anything. When it came back, I was very thirsty... I forgot to drink.")
-            ),
-
-        Symptom(name=String(
-                "Douleur inhabituelle",
-                "Unusual pain"),
-            start_date=Date(datetime(
-                2023, 4, 26)),
-            nerve=False,wave1=False,wave2=True,wave3=True,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "Parfois j'ai des douleurs difficile à décrire... ça brule? non.. ça 'pince'? non... Parfois ça pique et je ne peux pas m'empêcher de gratter. Ça ne m'était jamais arrivé avant.",
-                "Sometimes I have pain that's hard to describe... does it burn? No... does it 'pinch'? No... Sometimes it stings and I can't stop scratching. This has never happened to me before.")
-            ),
-
-        Symptom(name=String(
-                "Difficulté à se concentrer / apprendre",
-                "Difficulty concentrating / learning"),
-            start_date=Date(datetime(
-                2023, 5, 8)),
-            nerve=False,wave1=False,wave2=True,wave3=True,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent. Ça n'arrivait pas avant.",
-                "I noticed it late, but looking back, it happened often. It didn't happen before.")
-            ),
-
-        Symptom(name=String(
-                "Insomnie",
-                "Insomnia"),
-            start_date=Date(datetime(
-                2023, 5, 30)),
-            nerve=False,wave1=False,wave2=True,wave3=True,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "Je semble avoir plus de difficulté à m'endormir quand j'ai le plus d'autres symptômes dans la journée.",
-                "I seem to have more difficulty falling asleep when I have the most other symptoms during the day.")
-            ),
-
-        Symptom(name=String(
-                "Mal au ventre",
-                "Stomach ache"),
-            start_date=Date(datetime(
-                2023, 6, 3)),
-            nerve=False,wave1=True,wave2=True,wave3=False,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "",
-                "")
-            ),
-
-        Symptom(name=String(
-                "Nausée",
-                "Nausea"),
-            start_date=Date(datetime(
-                2023, 7, 2)),
-            nerve=False,wave1=False,wave2=True,wave3=True,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "",
-                "")
-            ),
-
-        Symptom(name=String(
-                "Nez bloqué",
-                "Blocked nose"),
-            start_date=Date(datetime(
-                2024, 6, 4)),
-            nerve=False,wave1=False,wave2=True,wave3=False,
-            current_status=String(
-                "Idem", ""),
-            notes=String(
-                "Je l'ai remarqué tard, mais avec du recul, c'est arrivé souvent, surtout la nuit, sans avoir de rhume. Ça n'arrivait pas avant.",
-                "I noticed it late, but looking back, it happened often, especially at night, without having a cold. It didn't happen before.")
+                "Idem.",
+                "Idem.")
             ),
         ]
+    symptoms_chrono = sorted(symptoms, key=lambda symptom: symptom.start_date.date)
         
     symptoms_summary_text = String(
-            """Les symptômes ne se déclenchent pas tous au même moment. J'ai noté trois vagues: <ol><li>
+            """Les symptômes ne se déclenchent pas tous au même moment. J'ai noté trois vagues après exposition: <ol><li>
 <strong>Minutes:</strong> pression, difficultés respiratoires, etc.
 </li><li>
 <strong>Jours:</strong> engourdissements, vertiges, fatigue, etc.
 </li><li>
 <strong>Post-inflammatoire:</strong> maux de tête, nausées, etc.
 </li></ol>""",
-            """The symptoms are not all triggered at the same time, I noticed 3 waves:<ol><li>
+            """The symptoms are not all triggered at the same time, I noticed 3 waves after exposure:<ol><li>
 <strong>Minutes:</strong> pressure, breathing issues, etc.
 </li><li>
 <strong>Days:</strong> numbness, vertigo, fatigue, etc.
@@ -727,6 +723,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         summary_text=summary_text,
         symptoms_summary_text=symptoms_summary_text,
         symptoms=symptoms,
+        symptoms_chrono=symptoms_chrono,
         key_events=key_events,
         notable_events=notable_events,
         tests=tests,
@@ -739,6 +736,7 @@ New discovery: symptoms intensify each time returning home after an absence (sus
         summary_text=summary_text,
         symptoms_summary_text=symptoms_summary_text,
         symptoms=symptoms,
+        symptoms_chrono=symptoms_chrono,
         key_events=key_events,
         notable_events=notable_events,
         tests=tests,
